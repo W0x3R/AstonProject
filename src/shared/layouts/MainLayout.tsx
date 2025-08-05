@@ -1,9 +1,13 @@
 export const MainLayout = ({ header, postList, footer }) => {
 	return (
-		<div>
+		<>
 			{header}
-			<main>{postList}</main>
+			<main>
+				<div className="wrapper">
+					<div className="container">{postList}</div>
+				</div>
+			</main>
 			{footer}
-		</div>
+		</>
 	)
 }
