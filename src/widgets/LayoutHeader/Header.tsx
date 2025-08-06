@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import styles from "./Header.module.css"
 import { Button } from "../../shared/ui/Button/Button"
 import { Modal } from "../../shared/ui/Modal/Modal"
 import headerLogo from "../../shared/assets/images/logo.webp"
-import styles from "./Header.module.css"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
+import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 
 export const Header = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -22,8 +23,8 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<div className="container">
-				<div className={styles.wrapper}>
+			<div className={GLOBAL_CLASSES.container}>
+				<div className={styles.header__wrapper}>
 					<a href="/">
 						<img
 							className={styles.header__logo}
