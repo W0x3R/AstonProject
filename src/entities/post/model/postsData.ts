@@ -1,42 +1,42 @@
 export const postsData = [
 	{
 		id: 1,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-body: "quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit molestiae ut ut quas totam
-nostrum rerum est autem sunt rem eveniet architecto`,
+		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
+		body: `ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit`,
 	},
 	{
 		id: 2,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-body: "quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit molestiae ut ut quas totam
-nostrum rerum est autem sunt rem eveniet architecto`,
+		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
+		body: `ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit`,
 	},
 	{
 		id: 3,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-body: "quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit molestiae ut ut quas totam
-nostrum rerum est autem sunt rem eveniet architecto`,
+		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
+		body: `ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit`,
 	},
 	{
 		id: 4,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-body: "quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit molestiae ut ut quas totam
-nostrum rerum est autem sunt rem eveniet architecto`,
+		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
+		body: `ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit`,
 	},
 	{
 		id: 5,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-body: "quia et suscipit
-suscipit recusandae consequuntur expedita et cum
-reprehenderit molestiae ut ut quas totam
-nostrum rerum est autem sunt rem eveniet architecto`,
+		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
+		body: `ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit`,
 	},
 ]
