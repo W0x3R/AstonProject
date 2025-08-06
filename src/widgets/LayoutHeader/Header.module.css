@@ -16,3 +16,48 @@
 		transform: scale(1.04);
 	}
 }
+
+.header__btn {
+	position: relative;
+	padding-block: 5px;
+	padding-inline: 16px;
+	font-size: 16px;
+	color: white;
+	background-color: #0d0d0b;
+	border: 1px solid black;
+
+	&:hover {
+		.header__btn-text::before {
+			width: 100%;
+		}
+	}
+}
+
+.header__btn-text {
+	display: inline-block;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		width: 0%;
+		height: 1px;
+		background-color: red;
+		transition: width 0.3s ease-in-out;
+	}
+}
+
+.header__modal {
+	background: #000000d4;
+}
+
+.header__modal-title {
+	font-size: 25px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+.header__modal-description {
+	font-size: 18px;
+	text-align: center;
+}

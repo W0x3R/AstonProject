@@ -6,10 +6,13 @@ export const Modal = ({ children, className, onClick, isModalOpen }) => {
 
 	return createPortal(
 		<div
-			className={`${styles.overlay} ${styles[className]} ${isModalOpen ? styles.open : ""}`}
+			className={`${styles.modal} ${className} ${isModalOpen ? styles.open : ""}`}
 			onClick={onClick}
 		>
-			<div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+			<div
+				className={styles.modal__content}
+				onClick={(e) => e.stopPropagation()}
+			>
 				<button onClick={onClick} className={styles.modal__close}>
 					✕
 				</button>

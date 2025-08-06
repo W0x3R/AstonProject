@@ -34,17 +34,17 @@ export const Header = () => {
 						/>
 					</a>
 
-					<Button onClick={handleModalOpen} className="header__popup-btn">
-						<span>О проекте</span>
+					<Button onClick={handleModalOpen} className={styles["header__btn"]}>
+						<span className={styles["header__btn-text"]}>О проекте</span>
 					</Button>
 
 					<Modal
-						className={"header__modal"}
+						className={styles.header__modal}
 						onClick={handleModalClose}
 						isModalOpen={isModalOpen}
 					>
-						<h2>О проекте</h2>
-						<p>
+						<h2 className={styles["header__modal-title"]}>О проекте</h2>
+						<p className={styles["header__modal-description"]}>
 							Приложение для просмотра постов и комментариев, основанное на
 							публичном API JSONPlaceholder.
 						</p>
