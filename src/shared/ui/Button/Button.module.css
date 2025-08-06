@@ -1,0 +1,32 @@
+.header__popup-btn {
+	position: relative;
+	color: white;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding-block: 5px;
+	padding-inline: 16px;
+	background-color: #0d0d0b;
+	font-size: 16px;
+	font-weight: 500;
+
+	&:hover {
+		span::before {
+			width: 100%;
+		}
+	}
+
+	span {
+		display: inline-block;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: -1px;
+			width: 0%;
+			height: 1px;
+			background-color: red;
+			transition: width 0.3s ease-in-out;
+		}
+	}
+}

@@ -1,3 +1,9 @@
-export const Button = ({ onClick, children }) => {
-	return <button onClick={onClick}>{children}</button>
+import styles from "./Button.module.css"
+
+export const Button = ({ onClick, children, className }) => {
+	return (
+		<button className={styles[className]} onClick={onClick}>
+			{children}
+		</button>
+	)
 }
