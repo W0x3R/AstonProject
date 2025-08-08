@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css"
-import footerLogo from "../../shared/assets/images/logo.webp"
+import FooterLogo from "../../shared/assets/images/logo.svg?react"
 import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 
 export const Footer = () => {
@@ -9,9 +9,8 @@ export const Footer = () => {
 				<div className={styles.footer__wrapper}>
 					<p>© 2025 Учебный проект для Aston.</p>
 					<a href="/">
-						<img
-							className={styles.header__logo}
-							src={footerLogo}
+						<FooterLogo
+							className={styles.footer__logo}
 							alt="logo"
 							width={40}
 							height={40}

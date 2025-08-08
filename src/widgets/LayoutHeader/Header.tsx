@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styles from "./Header.module.css"
 import { Button } from "../../shared/ui/Button/Button"
 import { Modal } from "../../shared/ui/Modal/Modal"
-import headerLogo from "../../shared/assets/images/logo.webp"
+import HeaderLogo from "../../shared/assets/images/logo.svg?react"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
 import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 
@@ -26,9 +26,8 @@ export const Header = () => {
 			<div className={GLOBAL_CLASSES.container}>
 				<div className={styles.header__wrapper}>
 					<a href="/">
-						<img
+						<HeaderLogo
 							className={styles.header__logo}
-							src={headerLogo}
 							alt="logo"
 							width={40}
 							height={40}
