@@ -9,3 +9,14 @@
 	align-items: center;
 	color: var(--color-text-primary);
 }
+
+.footer__logo {
+	width: 40px;
+	height: 40px;
+	fill: var(--fill-logo);
+	transition: transform 0.3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+}
