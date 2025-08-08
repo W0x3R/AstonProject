@@ -1,0 +1,22 @@
+.footer {
+	padding-block: 20px;
+	background-color: var(--color-footer-bg);
+}
+
+.footer__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: var(--color-text-primary);
+}
+
+.footer__logo {
+	width: 40px;
+	height: 40px;
+	fill: var(--fill-logo);
+	transition: transform 0.3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+}

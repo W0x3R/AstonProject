@@ -1,0 +1,19 @@
+.postcard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid var(--color-border-primary);
+	color: var(--color-text-primary);
+}
+
+.postcard__title {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.postcard__body {
+	font-size: 16px;
+}

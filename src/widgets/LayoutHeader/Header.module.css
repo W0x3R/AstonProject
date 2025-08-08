@@ -1,0 +1,65 @@
+.header {
+	padding-block: 20px;
+	background-color: var(--color-header-bg);
+}
+
+.header__wrapper {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.header__logo {
+	width: 40px;
+	height: 40px;
+	fill: var(--fill-logo);
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		transform: scale(1.04);
+	}
+}
+
+.header__btn {
+	position: relative;
+	padding-block: 5px;
+	padding-inline: 16px;
+	font-size: 16px;
+	color: var(--color-header-button-text);
+	background-color: var(--color-header-button-bg);
+
+	&:hover {
+		.header__btn-text::before {
+			width: 100%;
+		}
+	}
+}
+
+.header__btn-text {
+	display: inline-block;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		width: 0%;
+		height: 1px;
+		background-color: red;
+		transition: width 0.3s ease-in-out;
+	}
+}
+
+.header__modal {
+	background: var(--color-modal-overlay);
+	color: var(--color-text-primary);
+}
+
+.header__modal-title {
+	font-size: 25px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+.header__modal-description {
+	font-size: 18px;
+	text-align: center;
+}
