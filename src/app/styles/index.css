@@ -5,15 +5,43 @@ html {
 }
 
 body {
+	--bg-body-image: url("../../shared/assets/images/light-bg.webp");
+	--color-text-primary: black;
+	--color-bg-primary: white;
+	--color-border-primary: black;
+	--color-header-bg: #00000005;
+	--color-header-button-text: white;
+	--color-header-button-bg: black;
+	--color-modal-overlay: #000000d4;
+	--color-footer-bg: #00000005;
+	--fill-logo: black;
+	--color-theme-btn-bg: #ffffffab;
+	--fill-logo-theme: black;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	min-height: 100%;
-	background-image: url("../../shared/assets/images/bg.webp");
+	background-image: var(--bg-body-image);
 	background-position: center;
 	background-repeat: repeat;
 	background-size: cover;
+	transition: all 0.3s ease-in-out;
+}
+
+body.dark {
+	--bg-body-image: url("../../shared/assets/images/dark-bg.webp");
+	--color-text-primary: white;
+	--color-bg-primary: black;
+	--color-border-primary: white;
+	--color-header-bg: #ffffff0f;
+	--color-header-button-text: black;
+	--color-header-button-bg: white;
+	--color-modal-overlay: #626262d4;
+	--color-footer-bg: #ffffff0f;
+	--fill-logo: white;
+	--color-theme-btn-bg: #00000054;
+	--fill-logo-theme: white;
 }
 
 main {
