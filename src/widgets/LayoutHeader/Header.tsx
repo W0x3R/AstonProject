@@ -5,6 +5,7 @@ import { Modal } from "../../shared/ui/Modal/Modal"
 import HeaderLogo from "../../shared/assets/images/logo.svg?react"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
 import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
+import { ThemeSwitcher } from "../../app/features/ThemeSwitcher/ui/ThemeSwitcher.js"
 
 export const Header = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -33,10 +34,10 @@ export const Header = () => {
 							height={40}
 						/>
 					</a>
-
 					<Button onClick={handleModalOpen} className={styles["header__btn"]}>
 						<span className={styles["header__btn-text"]}>О проекте</span>
 					</Button>
+					<ThemeSwitcher />
 
 					<Modal
 						className={styles.header__modal}
