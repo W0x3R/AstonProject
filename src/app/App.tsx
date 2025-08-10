@@ -1,9 +1,9 @@
+import { useEffect, useState } from "react"
 import { MainLayout } from "../shared/layouts/MainLayout"
-import { PostList } from "../widgets/PostList/PostList"
 import { Header } from "../widgets/LayoutHeader/Header"
 import { Footer } from "../widgets/LayoutFooter/Footer"
 import { ThemeContext } from "../shared/lib/ThemeProvider"
-import { useEffect, useState } from "react"
+import { PostsPage } from "../pages/PostsPage/PostsPage"
 
 export const App = () => {
 	const [theme, setTheme] = useState("light")
@@ -17,11 +17,9 @@ export const App = () => {
 
 	return (
 		<ThemeContext.Provider value={{ theme, toggleTheme }}>
-			<MainLayout
-				header={<Header />}
-				footer={<Footer />}
-				postList={<PostList />}
-			/>
+			<MainLayout header={<Header />} footer={<Footer />}>
+				<PostsPage />
+			</MainLayout>
 		</ThemeContext.Provider>
 	)
 }

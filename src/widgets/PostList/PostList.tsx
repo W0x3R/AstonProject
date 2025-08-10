@@ -1,9 +1,8 @@
 import React from "react"
 import { PostCard } from "../../entities/post/ui/PostCard"
-import { postsData } from "../../entities/post/model/postsData"
 import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 
-export const PostList = () => {
+export const PostList = ({ postsData = [] }) => {
 	return (
 		<section>
 			<div className={GLOBAL_CLASSES.container}>
