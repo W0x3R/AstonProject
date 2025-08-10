@@ -44,11 +44,12 @@ export const Header = () => {
 						onClick={handleModalClose}
 						isModalOpen={isModalOpen}
 					>
-						<h2 className={styles["header__modal-title"]}>О проекте</h2>
-						<p className={styles["header__modal-description"]}>
+						<Modal.Header>О проекте</Modal.Header>
+						<Modal.Body>
 							Приложение для просмотра постов и комментариев, основанное на
 							публичном API JSONPlaceholder.
-						</p>
+						</Modal.Body>
+						<Modal.Footer>© 2025 Учебный проект для Aston.</Modal.Footer>
 					</Modal>
 				</div>
 			</div>
