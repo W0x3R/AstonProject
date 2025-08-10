@@ -17,6 +17,7 @@ body {
 	--fill-logo: black;
 	--color-theme-btn-bg: #ffffffab;
 	--fill-logo-theme: black;
+	--fill-loading-spinner: black;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
@@ -41,6 +42,7 @@ body.dark {
 	--fill-logo: white;
 	--color-theme-btn-bg: #00000054;
 	--fill-logo-theme: white;
+	--fill-loading-spinner: white;
 }
 
 #root {
