@@ -53,13 +53,3 @@
 	background: var(--color-modal-overlay);
 	color: var(--color-text-primary);
 }
-
-.header__modal-title {
-	font-size: 25px;
-	margin-bottom: 8px;
-	text-align: center;
-}
-.header__modal-description {
-	font-size: 18px;
-	text-align: center;
-}
