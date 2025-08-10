@@ -8,17 +8,6 @@
 	justify-content: space-evenly;
 }
 
-.header__logo {
-	width: 40px;
-	height: 40px;
-	fill: var(--fill-logo);
-	transition: all 0.3s ease-in-out;
-
-	&:hover {
-		transform: scale(1.04);
-	}
-}
-
 .header__btn {
 	position: relative;
 	padding-block: 5px;
