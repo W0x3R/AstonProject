@@ -1,0 +1,23 @@
+@keyframes rotateSpinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.spinner__wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.spinner {
+	display: inline-block;
+	animation: rotateSpinner 0.8s infinite linear;
+}
+
+.spinner.small {
+	width: 60px;
+	height: 60px;
+}
