@@ -15,6 +15,7 @@
 	font-size: 16px;
 	color: var(--color-header-button-text);
 	background-color: var(--color-header-button-bg);
+	transition: all 0.3s ease-in-out;
 
 	&:hover {
 		.header__btn-text::before {
