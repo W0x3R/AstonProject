@@ -1,14 +1,13 @@
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { postsData } from "../../entities/post/model/postsData"
+import { Container } from "../../shared/ui/Container"
 
 export const PostList = () => {
 	return (
-		<div className="wrapper">
-			<div className="container">
-				{postsData.map((postData) => (
-					<PostCard key={postData.id} postData={postData} />
-				))}
-			</div>
-		</div>
+		<Container>
+			{postsData.map((postData) => (
+				<PostCard key={postData.id} postData={postData} />
+			))}
+		</Container>
 	)
 }
