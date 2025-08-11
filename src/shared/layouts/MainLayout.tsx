@@ -1,8 +1,8 @@
-export const MainLayout = ({ header, postList, footer }) => {
+export const MainLayout = ({ header, children, footer }) => {
 	return (
 		<>
 			{header}
-			<main>{postList}</main>
+			<main>{children}</main>
 			{footer}
 		</>
 	)

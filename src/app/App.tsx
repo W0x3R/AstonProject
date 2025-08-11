@@ -5,10 +5,8 @@ import { Footer } from "../widgets/LayoutFooter/Footer"
 
 export const App = () => {
 	return (
-		<MainLayout
-			header={<Header />}
-			footer={<Footer />}
-			postList={<PostList />}
-		/>
+		<MainLayout header={<Header />} footer={<Footer />}>
+			<PostList />
+		</MainLayout>
 	)
 }
