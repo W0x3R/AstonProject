@@ -10,7 +10,7 @@
 	}
 }
 
-.light__theme-icon {
+.light-theme-icon {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -25,7 +25,7 @@
 		opacity: 1;
 	}
 }
-.dark__theme-icon {
+.dark-theme-icon {
 	position: absolute;
 	left: 50%;
 	top: 50%;
