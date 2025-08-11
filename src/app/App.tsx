@@ -17,11 +17,9 @@ export const App = () => {
 
 	return (
 		<ThemeContext.Provider value={{ theme, toggleTheme }}>
-			<MainLayout
-				header={<Header />}
-				footer={<Footer />}
-				postList={<PostList />}
-			/>
+			<MainLayout header={<Header />} footer={<Footer />}>
+				<PostList />
+			</MainLayout>
 		</ThemeContext.Provider>
 	)
 }

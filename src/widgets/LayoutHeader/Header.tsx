@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
+import { Container } from "../../shared/ui/Container"
 import styles from "./Header.module.css"
 import { Button } from "../../shared/ui/Button/Button"
 import { Modal } from "../../shared/ui/Modal/Modal"
 import HeaderLogo from "../../shared/assets/images/logo.svg?react"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
-import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 import { ThemeSwitcher } from "../../app/features/ThemeSwitcher/ui/ThemeSwitcher.js"
 
 export const Header = () => {
@@ -24,7 +24,7 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<div className={GLOBAL_CLASSES.container}>
+			<Container>
 				<div className={styles.header__wrapper}>
 					<a href="/">
 						<HeaderLogo
@@ -51,7 +51,7 @@ export const Header = () => {
 						</p>
 					</Modal>
 				</div>
-			</div>
+			</Container>
 		</header>
 	)
 }
