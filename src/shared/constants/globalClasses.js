@@ -1,3 +1,4 @@
 export const GLOBAL_CLASSES = {
-	container: "container",
+	dark: "dark",
+	light: "light",
 }
