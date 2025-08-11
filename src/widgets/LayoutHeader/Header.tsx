@@ -25,27 +25,30 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<Container>
-				<div className={styles.header__wrapper}>
+				<div className={styles.wrapper}>
 					<a href="/">
 						<HeaderLogo
-							className={styles.header__logo}
+							className={styles.logo}
 							alt="logo"
 							width={40}
 							height={40}
 						/>
 					</a>
-					<Button onClick={handleModalOpen} className={styles["header__btn"]}>
-						<span className={styles["header__btn-text"]}>О проекте</span>
+					<Button
+						onClick={handleModalOpen}
+						className={styles["open-modal-btn"]}
+					>
+						<span className={styles["open-modal-btn-text"]}>О проекте</span>
 					</Button>
 					<ThemeSwitcher />
 
 					<Modal
-						className={styles.header__modal}
+						className={styles.modal}
 						onClick={handleModalClose}
 						isModalOpen={isModalOpen}
 					>
-						<h2 className={styles["header__modal-title"]}>О проекте</h2>
-						<p className={styles["header__modal-description"]}>
+						<h2 className={styles["modal-title"]}>О проекте</h2>
+						<p className={styles["modal-description"]}>
 							Приложение для просмотра постов и комментариев, основанное на
 							публичном API JSONPlaceholder.
 						</p>

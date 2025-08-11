@@ -13,7 +13,7 @@
 	}
 }
 
-.modal__content {
+.content {
 	position: absolute;
 	left: 50%;
 	top: 50%;
@@ -25,7 +25,7 @@
 	cursor: default;
 }
 
-.modal__close {
+.close-btn {
 	position: absolute;
 	right: -40px;
 	top: -40px;

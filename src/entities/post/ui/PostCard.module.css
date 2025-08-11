@@ -8,12 +8,12 @@
 	color: var(--color-text-primary);
 }
 
-.postcard__title {
+.title {
 	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
 
-.postcard__body {
+.body {
 	font-size: 16px;
 }

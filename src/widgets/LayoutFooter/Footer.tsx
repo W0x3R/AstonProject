@@ -6,11 +6,11 @@ export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<Container>
-				<div className={styles.footer__wrapper}>
+				<div className={styles.wrapper}>
 					<p>© 2025 Учебный проект для Aston.</p>
 					<a href="/">
 						<FooterLogo
-							className={styles.footer__logo}
+							className={styles.logo}
 							alt="logo"
 							width={40}
 							height={40}

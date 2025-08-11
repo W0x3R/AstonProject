@@ -3,12 +3,12 @@
 	background-color: var(--color-header-bg);
 }
 
-.header__wrapper {
+.wrapper {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.header__logo {
+.logo {
 	width: 40px;
 	height: 40px;
 	fill: var(--fill-logo);
@@ -19,7 +19,7 @@
 	}
 }
 
-.header__btn {
+.open-modal-btn {
 	position: relative;
 	padding-block: 5px;
 	padding-inline: 16px;
@@ -34,7 +34,7 @@
 	}
 }
 
-.header__btn-text {
+.open-modal-btn-text {
 	display: inline-block;
 	position: relative;
 
@@ -49,17 +49,17 @@
 	}
 }
 
-.header__modal {
+.modal {
 	background: var(--color-modal-overlay);
 	color: var(--color-text-primary);
 }
 
-.header__modal-title {
+.modal-title {
 	font-size: 25px;
 	margin-bottom: 8px;
 	text-align: center;
 }
-.header__modal-description {
+.modal-description {
 	font-size: 18px;
 	text-align: center;
 }

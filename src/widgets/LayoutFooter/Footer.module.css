@@ -3,14 +3,14 @@
 	background-color: var(--color-footer-bg);
 }
 
-.footer__wrapper {
+.wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	color: var(--color-text-primary);
 }
 
-.footer__logo {
+.logo {
 	width: 40px;
 	height: 40px;
 	fill: var(--fill-logo);
