@@ -1,0 +1,53 @@
+.toggle-comment-btn {
+	position: relative;
+	margin-bottom: 10px;
+	padding-block: 12px;
+	padding-inline: 14px;
+	font-size: 16px;
+	color: var(--color-comment-toggle-button);
+	background-color: var(--color-button-bg-primary);
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: var(--color-comment-toggle-button-hover);
+	}
+}
+
+.comment-wrapper {
+	padding-bottom: 12px;
+	max-height: 600px;
+	opacity: 1;
+	overflow: hidden;
+	transition:
+		opacity 0.1s ease-in-out,
+		padding 0.1s ease-in-out,
+		max-height 0.2s ease-in-out,
+		color 0.3s ease-in-out;
+	color: var(--color-text-primary);
+}
+
+.comment-wrapper:first-of-type {
+	padding-top: 12px;
+	border-top: 2px solid darkgray;
+}
+
+.comment-wrapper.collapsed {
+	padding: 0;
+	max-height: 0;
+	opacity: 0;
+	overflow: visible;
+}
+
+.title {
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.email {
+	margin-bottom: 2px;
+	font-size: 14px;
+}
+
+.body {
+	font-size: 18px;
+}

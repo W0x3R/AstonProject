@@ -10,7 +10,7 @@ export const PostList = ({ postsData = [] }) => {
 			<Container>
 				{postsData.map((postData) => {
 					const postComments = commentsData.filter(
-						(comment) => comment.id === postData.id
+						(comment) => comment.postId === postData.id
 					)
 					return (
 						<div className={styles.post__wrapper} key={postData.id}>
