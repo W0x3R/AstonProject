@@ -18,7 +18,7 @@
 	transition: all 0.3s ease-in-out;
 
 	&:hover {
-		.header__btn-text::before {
+		.open-modal-btn-text::before {
 			width: 100%;
 		}
 	}
