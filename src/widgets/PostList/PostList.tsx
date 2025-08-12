@@ -1,13 +1,13 @@
 import { PostCard } from "../../entities/post/ui/PostCard"
-import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 import { commentsData } from "../../entities/post/model/commentsData.js"
 import { CommentList } from "../CommentList/CommentList.js"
 import styles from "./PostList.module.css"
+import { Container } from "../../shared/ui/Container.js"
 
 export const PostList = ({ postsData = [] }) => {
 	return (
 		<section>
-			<div className={GLOBAL_CLASSES.container}>
+			<Container>
 				{postsData.map((postData) => {
 					const postComments = commentsData.filter(
 						(comment) => comment.id === postData.id
@@ -19,7 +19,7 @@ export const PostList = ({ postsData = [] }) => {
 						</div>
 					)
 				})}
-			</div>
+			</Container>
 		</section>
 	)
 }

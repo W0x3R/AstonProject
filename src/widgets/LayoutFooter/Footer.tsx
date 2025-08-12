@@ -1,12 +1,12 @@
+import { Container } from "../../shared/ui/Container"
 import styles from "./Footer.module.css"
-import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
 import { Logo } from "../../shared/ui/Logo/Logo.js"
 
 export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
-			<div className={GLOBAL_CLASSES.container}>
-				<div className={styles.footer__wrapper}>
+			<Container>
+				<div className={styles.wrapper}>
 					<p>© 2025 Учебный проект для Aston.</p>
 					<a href="/">
 						<Logo />
@@ -15,7 +15,7 @@ export const Footer = () => {
 						GitHub проекта
 					</a>
 				</div>
-			</div>
+			</Container>
 		</footer>
 	)
 }

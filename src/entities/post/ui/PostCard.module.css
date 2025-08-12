@@ -7,12 +7,12 @@
 	transition: all 0.3s ease-in-out;
 }
 
-.postcard__title {
+.title {
 	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
 
-.postcard__body {
+.body {
 	font-size: 16px;
 }

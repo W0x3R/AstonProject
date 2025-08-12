@@ -3,12 +3,12 @@
 	background-color: var(--color-header-bg);
 }
 
-.header__wrapper {
+.wrapper {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.header__btn {
+.open-modal-btn {
 	position: relative;
 	padding-block: 5px;
 	padding-inline: 16px;
@@ -24,7 +24,7 @@
 	}
 }
 
-.header__btn-text {
+.open-modal-btn-text {
 	display: inline-block;
 	position: relative;
 
@@ -39,7 +39,18 @@
 	}
 }
 
-.header__modal {
+.modal {
 	background: var(--color-modal-overlay);
 	color: var(--color-text-primary);
+}
+
+.modal-title {
+	font-size: 25px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.modal-description {
+	font-size: 18px;
+	text-align: center;
 }

@@ -9,11 +9,8 @@ export const Modal = ({ children, className, onClick, isModalOpen }) => {
 			className={`${styles.modal} ${className} ${isModalOpen ? styles.open : ""}`}
 			onClick={onClick}
 		>
-			<div
-				className={styles.modal__content}
-				onClick={(e) => e.stopPropagation()}
-			>
-				<button onClick={onClick} className={styles.modal__close}>
+			<div className={styles.content} onClick={(e) => e.stopPropagation()}>
+				<button onClick={onClick} className={styles["close-btn"]}>
 					✕
 				</button>
 				{children}

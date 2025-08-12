@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import styles from "./Header.module.css"
+import { Container } from "../../shared/ui/Container"
 import { Button } from "../../shared/ui/Button/Button"
 import { Modal } from "../../shared/ui/Modal/Modal"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
-import { GLOBAL_CLASSES } from "../../app/styles/globalClasses.js"
-import { ThemeSwitcher } from "../../app/features/ThemeSwitcher/ui/ThemeSwitcher.js"
+import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher"
 import { Logo } from "../../shared/ui/Logo/Logo.js"
 
 export const Header = () => {
@@ -24,18 +24,21 @@ export const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<div className={GLOBAL_CLASSES.container}>
-				<div className={styles.header__wrapper}>
+			<Container>
+				<div className={styles.wrapper}>
 					<a href="/">
 						<Logo />
 					</a>
-					<Button onClick={handleModalOpen} className={styles["header__btn"]}>
-						<span className={styles["header__btn-text"]}>О проекте</span>
+					<Button
+						onClick={handleModalOpen}
+						className={styles["open-modal-btn"]}
+					>
+						<span className={styles["open-modal-btn-text"]}>О проекте</span>
 					</Button>
 					<ThemeSwitcher />
 
 					<Modal
-						className={styles.header__modal}
+						className={styles.modal}
 						onClick={handleModalClose}
 						isModalOpen={isModalOpen}
 					>
@@ -47,7 +50,7 @@ export const Header = () => {
 						<Modal.Footer>© 2025 Учебный проект для Aston.</Modal.Footer>
 					</Modal>
 				</div>
-			</div>
+			</Container>
 		</header>
 	)
 }

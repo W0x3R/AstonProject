@@ -3,7 +3,7 @@
 	background-color: var(--color-footer-bg);
 }
 
-.footer__wrapper {
+.wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
