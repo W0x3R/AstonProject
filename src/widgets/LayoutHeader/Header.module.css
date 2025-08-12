@@ -13,8 +13,8 @@
 	padding-block: 5px;
 	padding-inline: 16px;
 	font-size: 16px;
-	color: var(--color-header-button-text);
-	background-color: var(--color-header-button-bg);
+	color: var(--color-button-text-primary);
+	background-color: var(--color-button-bg-primary);
 	transition: all 0.3s ease-in-out;
 
 	&:hover {

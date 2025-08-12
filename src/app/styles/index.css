@@ -10,8 +10,8 @@ body {
 	--color-bg-primary: white;
 	--color-border-primary: black;
 	--color-header-bg: #00000005;
-	--color-header-button-text: white;
-	--color-header-button-bg: black;
+	--color-button-text-primary: white;
+	--color-button-bg-primary: black;
 	--color-modal-overlay: #000000d4;
 	--color-footer-bg: #00000005;
 	--fill-logo: black;
@@ -35,8 +35,8 @@ body.dark {
 	--color-bg-primary: black;
 	--color-border-primary: white;
 	--color-header-bg: #ffffff0f;
-	--color-header-button-text: black;
-	--color-header-button-bg: white;
+	--color-button-text-primary: black;
+	--color-button-bg-primary: white;
 	--color-modal-overlay: #626262d4;
 	--color-footer-bg: #ffffff0f;
 	--fill-logo: white;
