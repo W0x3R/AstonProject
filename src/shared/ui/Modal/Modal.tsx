@@ -21,7 +21,7 @@ export const Modal = ({ children, className, onClick, isModalOpen }) => {
 }
 
 Modal.Header = ({ children }) => (
-	<h2 className={styles.modal__header}>{children}</h2>
+	<h1 className={styles.modal__header}>{children}</h1>
 )
 
 Modal.Body = ({ children }) => <p className={styles.modal__body}>{children}</p>
