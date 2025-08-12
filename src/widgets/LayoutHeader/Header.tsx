@@ -1,4 +1,4 @@
-import { Container } from "../../shared/ui/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import styles from "./Header.module.css"
 
 export const Header = () => {
