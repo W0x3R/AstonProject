@@ -18,10 +18,13 @@ body {
 	--color-theme-btn-bg: #ffffffab;
 	--fill-logo-theme: black;
 	--fill-loading-spinner: black;
+	--color-comment-toggle-button: #d5d5d5;
+	--color-comment-toggle-button-hover: white;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+	letter-spacing: 0.5px;
 	min-height: 100%;
 	background-image: var(--bg-body-image);
 	background-position: center;
@@ -31,7 +34,7 @@ body {
 
 body.dark {
 	--bg-body-image: url("../../shared/assets/images/dark-bg.webp");
-	--color-text-primary: white;
+	--color-text-primary: #e1e3e6;
 	--color-bg-primary: black;
 	--color-border-primary: white;
 	--color-header-bg: #ffffff0f;
@@ -43,6 +46,8 @@ body.dark {
 	--color-theme-btn-bg: #00000054;
 	--fill-logo-theme: white;
 	--fill-loading-spinner: white;
+	--color-comment-toggle-button: #504a4a;
+	--color-comment-toggle-button-hover: black;
 }
 
 #root {
