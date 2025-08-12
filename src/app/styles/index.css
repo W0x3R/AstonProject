@@ -20,6 +20,7 @@ body {
 	--fill-loading-spinner: black;
 	--color-comment-toggle-button: #d5d5d5;
 	--color-comment-toggle-button-hover: white;
+	--color-filter-input-border: #0000002e;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
@@ -48,6 +49,7 @@ body.dark {
 	--fill-loading-spinner: white;
 	--color-comment-toggle-button: #504a4a;
 	--color-comment-toggle-button-hover: black;
+	--color-filter-input-border: #e1e3e6;
 }
 
 #root {
@@ -55,4 +57,14 @@ body.dark {
 	flex-direction: column;
 	height: 100%;
 	justify-content: space-between;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
 }

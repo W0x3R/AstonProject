@@ -1,0 +1,36 @@
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	margin-block: 26px;
+}
+
+.label {
+	cursor: pointer;
+	font-size: 16px;
+	color: var(--color-text-primary);
+	transition: all 0.3s ease-in-out;
+}
+
+.input {
+	padding-inline: 6px;
+	padding-block: 4px;
+	max-width: 110px;
+	text-align: center;
+	outline: none;
+	border: 0;
+	border-radius: 10px;
+	background: transparent;
+	color: var(--color-text-primary);
+	border: 2.5px solid var(--color-filter-input-border);
+	transition: all 0.3s linear;
+
+	&:hover {
+		transform: scale(1.03);
+	}
+
+	&:focus {
+		transform: scale(1.03);
+	}
+}
