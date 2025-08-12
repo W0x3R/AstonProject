@@ -1,7 +1,7 @@
 import React from "react"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { postsData } from "../../entities/post/model/postsData"
-import { Container } from "../../shared/ui/Container.js"
+import { Container } from "../../shared/ui/Container/Container"
 
 export const PostList = () => {
 	return (
