@@ -1,4 +1,4 @@
-import { Container } from "../../shared/ui/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import styles from "./Footer.module.css"
 import { Logo } from "../../shared/ui/Logo/Logo.js"
 

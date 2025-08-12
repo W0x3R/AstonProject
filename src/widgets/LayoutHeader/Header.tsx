@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import styles from "./Header.module.css"
-import { Container } from "../../shared/ui/Container"
+import { Container } from "../../shared/ui/Container/Container"
 import { Button } from "../../shared/ui/Button/Button"
 import { Modal } from "../../shared/ui/Modal/Modal"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"

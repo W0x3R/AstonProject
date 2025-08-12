@@ -2,7 +2,7 @@ import { PostCard } from "../../entities/post/ui/PostCard"
 import { commentsData } from "../../entities/post/model/commentsData.js"
 import { CommentList } from "../CommentList/CommentList.js"
 import styles from "./PostList.module.css"
-import { Container } from "../../shared/ui/Container.js"
+import { Container } from "../../shared/ui/Container/Container"
 
 export const PostList = ({ postsData = [] }) => {
 	return (
