@@ -1,42 +1,32 @@
 export const postsData = [
 	{
 		id: 1,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
-		body: `ullam et saepe reiciendis voluptatem adipisci
-sit amet autem assumenda provident rerum culpa
-quis hic commodi nesciunt rem tenetur doloremque ipsam iure
-quis sunt voluptatem rerum illo velit`,
+		title: "Как начать утро продуктивно: 5 простых шагов",
+		body: `Начните день с лёгкой зарядки, выпейте стакан воды и выделите 10 минут на планирование задач. 
+Это поможет сосредоточиться, сохранить энергию и избежать спешки.`,
 	},
 	{
 		id: 2,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
-		body: `ullam et saepe reiciendis voluptatem adipisci
-sit amet autem assumenda provident rerum culpa
-quis hic commodi nesciunt rem tenetur doloremque ipsam iure
-quis sunt voluptatem rerum illo velit`,
+		title: "Почему важно регулярно читать книги",
+		body: `Чтение развивает воображение, расширяет словарный запас и помогает лучше понимать окружающий мир. 
+Даже 15 минут в день могут принести ощутимую пользу.`,
 	},
 	{
 		id: 3,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
-		body: `ullam et saepe reiciendis voluptatem adipisci
-sit amet autem assumenda provident rerum culpa
-quis hic commodi nesciunt rem tenetur doloremque ipsam iure
-quis sunt voluptatem rerum illo velit`,
+		title: "Советы по организации рабочего места",
+		body: `Чистый стол, правильное освещение и удобное кресло — залог продуктивной работы. 
+Поддерживайте порядок, чтобы не отвлекаться на лишние вещи.`,
 	},
 	{
 		id: 4,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
-		body: `ullam et saepe reiciendis voluptatem adipisci
-sit amet autem assumenda provident rerum culpa
-quis hic commodi nesciunt rem tenetur doloremque ipsam iure
-quis sunt voluptatem rerum illo velit`,
+		title: "Как экономить время при работе за компьютером",
+		body: `Используйте горячие клавиши, планируйте перерывы и минимизируйте количество отвлекающих вкладок. 
+Эти привычки помогут работать быстрее и эффективнее.`,
 	},
 	{
 		id: 5,
-		title: `sunt aut facere repellat provident occaecati excepturi optio reprehenderit`,
-		body: `ullam et saepe reiciendis voluptatem adipisci
-sit amet autem assumenda provident rerum culpa
-quis hic commodi nesciunt rem tenetur doloremque ipsam iure
-quis sunt voluptatem rerum illo velit`,
+		title: "Польза прогулок на свежем воздухе",
+		body: `Регулярные прогулки улучшают настроение, снижают стресс и помогают поддерживать здоровье. 
+Достаточно 20–30 минут в день, чтобы почувствовать разницу.`,
 	},
 ]
