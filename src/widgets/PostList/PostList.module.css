@@ -2,4 +2,5 @@
 	padding: 15px;
 	margin-bottom: 25px;
 	border: 2px solid var(--color-border-primary);
+	border-radius: 20px;
 }
