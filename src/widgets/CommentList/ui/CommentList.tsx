@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 import styles from "./CommentList.module.css"
-import { Button } from "../../shared/ui/Button/Button"
+import { Button } from "../../../shared/ui/Button/Button"
 
 export const CommentList = ({ postComments = [] }) => {
 	const [expandedComments, setExpandedComments] = useState([])
