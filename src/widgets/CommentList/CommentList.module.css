@@ -26,6 +26,12 @@
 	color: var(--color-text-primary);
 }
 
+.no-comments {
+	font-size: 16px;
+	color: var(--color-text-primary);
+	transition: all 0.3s ease-in-out;
+}
+
 .comment-wrapper:first-of-type {
 	padding-top: 12px;
 	border-top: 2px solid darkgray;

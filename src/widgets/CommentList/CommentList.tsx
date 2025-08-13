@@ -4,7 +4,8 @@ import { Button } from "../../shared/ui/Button/Button"
 
 export const CommentList = ({ postComments = [] }) => {
 	const [expandedComments, setExpandedComments] = useState([])
-	if (postComments.length === 0) return <p>Нет комментариев</p>
+	if (postComments.length === 0)
+		return <p className={styles["no-comments"]}>Комментарии отсутствуют</p>
 
 	const postId = postComments[0].postId
 	const isExpanded = expandedComments.includes(postId)
