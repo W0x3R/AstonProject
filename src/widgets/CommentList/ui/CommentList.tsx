@@ -7,8 +7,8 @@ export const CommentList = ({ postComments = [] }) => {
 	if (postComments.length === 0)
 		return <p className={styles["no-comments"]}>Комментарии отсутствуют</p>
 
-	const postId = postComments[0].postId
-	const isExpanded = expandedComments.includes(postId)
+	const firstPostId = postComments.find((comment) => comment.postId)?.postId
+	const isCollapsed = expandedComments.includes(firstPostId)
 
 	const toggleComment = useCallback((commentPostId) => {
 		setExpandedComments((prev) =>
@@ -22,16 +22,16 @@ export const CommentList = ({ postComments = [] }) => {
 		<div>
 			<Button
 				className={styles["toggle-comment-btn"]}
-				onClick={() => toggleComment(postId)}
+				onClick={() => toggleComment(firstPostId)}
 			>
-				{isExpanded ?
+				{isCollapsed ?
 					`Показать комментарии (${postComments.length})`
 				:	"Свернуть комментарии"}
 			</Button>
 			{postComments.map(({ id, name, email, body }) => {
 				return (
 					<div
-						className={`${styles["comment-wrapper"]} ${isExpanded ? styles.collapsed : ""}`}
+						className={`${styles["comment-wrapper"]} ${isCollapsed ? styles.collapsed : ""}`}
 						key={id}
 					>
 						<h2 className={styles.title}>{name}</h2>
