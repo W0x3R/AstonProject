@@ -6,6 +6,7 @@ import { CommentList } from "../CommentList/CommentList.js"
 import { Container } from "../../shared/ui/Container/Container"
 import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter.js"
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength.js"
+import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 
 export const PostList = ({ postsData = [] }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
@@ -29,10 +30,10 @@ export const PostList = ({ postsData = [] }) => {
 					onFilterChange={onFilterChange}
 				/>
 				{filteredData.length === 0 && (
-					<p>
-						По вашему запросу посты с таким заголовком не найдены. Попробуйте
-						изменить длину заголовка.
-					</p>
+					<DataNotFound>
+						Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
+						попробуйте другие настройки фильтра.
+					</DataNotFound>
 				)}
 				{filteredData.map((postData) => {
 					const postComments = commentsData.filter(
