@@ -6,6 +6,7 @@ import { Modal } from "../../shared/ui/Modal/Modal"
 import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
 import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher"
 import { Logo } from "../../shared/ui/Logo/Logo.js"
+import { UserTabs } from "../UserTabs/UserTabs.js"
 
 export const Header = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -50,6 +51,7 @@ export const Header = () => {
 						<Modal.Footer>© 2025 Учебный проект для Aston.</Modal.Footer>
 					</Modal>
 				</div>
+				<UserTabs />
 			</Container>
 		</header>
 	)
