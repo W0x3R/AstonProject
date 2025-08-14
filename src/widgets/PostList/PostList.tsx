@@ -7,6 +7,7 @@ import { Container } from "../../shared/ui/Container/Container"
 import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter.js"
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength.js"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
+import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
 
 export const PostList = ({ postsData = [] }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
@@ -41,6 +42,7 @@ export const PostList = ({ postsData = [] }) => {
 					)
 					return (
 						<div className={styles.post__wrapper} key={postData.id}>
+							<NavigateLink text="Открыть пост" url={`/posts/${postData.id}`} />
 							<PostCard postData={postData} />
 							<CommentList postComments={postComments} />
 						</div>
