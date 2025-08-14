@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react"
-import { MainLayout } from "../shared/layouts/MainLayout"
-import { Header } from "../widgets/LayoutHeader/Header"
-import { Footer } from "../widgets/LayoutFooter/Footer"
 import { ThemeContext } from "../shared/lib/ThemeProvider"
-import { PostsPage } from "../pages/PostsPage/PostsPage"
 import { GLOBAL_CLASSES } from "../shared/constants/globalClasses"
+import { RouterProvider } from "react-router"
+import { router } from "./providers/router/router"
 
 export const App = () => {
 	const [theme, setTheme] = useState(GLOBAL_CLASSES.light)
@@ -23,9 +21,7 @@ export const App = () => {
 
 	return (
 		<ThemeContext.Provider value={{ theme, toggleTheme }}>
-			<MainLayout header={<Header />} footer={<Footer />}>
-				<PostsPage />
-			</MainLayout>
+			<RouterProvider router={router}></RouterProvider>
 		</ThemeContext.Provider>
 	)
 }

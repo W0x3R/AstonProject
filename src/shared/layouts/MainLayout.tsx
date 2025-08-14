@@ -1,8 +1,12 @@
-export const MainLayout = ({ header, children, footer }) => {
+import { Outlet } from "react-router"
+
+export const MainLayout = ({ header, footer }) => {
 	return (
 		<>
 			{header}
-			<main>{children}</main>
+			<main>
+				<Outlet />
+			</main>
 			{footer}
 		</>
 	)
