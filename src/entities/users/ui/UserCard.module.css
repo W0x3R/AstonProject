@@ -1,0 +1,29 @@
+.data-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	row-gap: 5px;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.info-wrapper,
+.adress-wrapper,
+.company-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 5px;
+}
+
+.title {
+	font-size: 22px;
+	color: var(--color-text-primary);
+	transition: all 0.3s ease-in-out;
+}
+
+.info {
+	font-size: 16px;
+	color: var(--color-text-primary);
+	transition: all 0.3s ease-in-out;
+}
