@@ -21,6 +21,7 @@ body {
 	--color-comment-toggle-button: #d5d5d5;
 	--color-comment-toggle-button-hover: white;
 	--color-filter-input-border: #0000002e;
+	--color-nav-item-before: black;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
@@ -50,6 +51,7 @@ body.dark {
 	--color-comment-toggle-button: #504a4a;
 	--color-comment-toggle-button-hover: black;
 	--color-filter-input-border: #e1e3e6;
+	--color-nav-item-before: white;
 }
 
 #root {
