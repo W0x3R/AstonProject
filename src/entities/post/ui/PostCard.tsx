@@ -4,7 +4,7 @@ export const PostCard = ({ postData }) => {
 	const { title, body } = postData
 	return (
 		<div className={styles.postcard}>
-			<p className={styles.title}>{title}</p>
+			<h2 className={styles.title}>{title}</h2>
 			<p className={styles.body}>{body}</p>
 		</div>
 	)
