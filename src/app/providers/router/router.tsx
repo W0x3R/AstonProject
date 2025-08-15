@@ -4,6 +4,8 @@ import { Header } from "../../../widgets/LayoutHeader/Header"
 import { Footer } from "../../../widgets/LayoutFooter/Footer"
 import { PostsPage } from "../../../pages/PostsPage/PostsPage"
 import { PostPage } from "../../../pages/PostPage/PostPage"
+import { AlbumsPage } from "../../../pages/AlbumsPage/AlbumsPage"
+import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/AlbumPhotosPage "
 
 export const router = createBrowserRouter([
 	{
@@ -14,7 +16,8 @@ export const router = createBrowserRouter([
 
 			{ path: "posts", element: <PostsPage /> },
 			{ path: "posts/:id", element: <PostPage /> },
-			{ path: "albums", element: <div>123</div> },
+			{ path: "albums", element: <AlbumsPage /> },
+			{ path: "albums/:id/photos", element: <AlbumPhotosPage /> },
 			{ path: "users", element: <div>123</div> },
 		],
 	},
