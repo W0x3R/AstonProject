@@ -16,8 +16,16 @@ export const UserList = ({ usersData = [] }) => {
 						<div className={styles["user-wrapper"]} key={user.id}>
 							<UserCard userData={user} />
 							<NavigateLink
-								text="Дополнительная информация"
-								url={`/users/${user.id}`}
+								text="Посты пользователя"
+								url={`/users/${user.id}/posts`}
+							/>
+							<NavigateLink
+								text="Альбомы пользователя"
+								url={`/users/${user.id}/albums`}
+							/>
+							<NavigateLink
+								text="Список дел пользователя"
+								url={`/users/${user.id}/todos`}
 							/>
 						</div>
 					)
