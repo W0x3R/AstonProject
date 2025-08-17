@@ -11,6 +11,7 @@ import { BackLink } from "../../shared/ui/BackLink/BackLink"
 export const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
+
 	const post = postsData.find((post) => post.id === postId)
 	const comments = commentsData.filter((comment) => comment.postId === postId)
 	const sectionRef = useRef(null)
@@ -25,6 +26,8 @@ export const PostPage = () => {
 	return (
 		<section ref={sectionRef}>
 			<Container>
+				<h2 className={styles.title}>{`Пост пользователя №${postId}:`}</h2>
+
 				<div ref={postWrapperRef} className={styles.post__wrapper}>
 					<BackLink position="end" />
 					<PostCard postData={post} />

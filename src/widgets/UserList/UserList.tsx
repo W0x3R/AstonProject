@@ -6,11 +6,12 @@ import { UserCard } from "../../entities/users/ui/UserCard"
 
 export const UserList = ({ usersData = [] }) => {
 	return (
-		<section>
+		<section className={styles.section}>
 			<Container>
 				{usersData.length === 0 && (
 					<DataNotFound>Похоже, что пользователи не найдены.</DataNotFound>
 				)}
+				<h2 className={styles.title}>Все пользователи:</h2>
 				{usersData.map((user) => {
 					return (
 						<div className={styles["user-wrapper"]} key={user.id}>

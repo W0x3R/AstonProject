@@ -24,7 +24,7 @@ export const PostList = ({ postsData = [] }) => {
 	}, [])
 
 	return (
-		<section>
+		<section className={styles.section}>
 			<Container>
 				<PostLengthFilter
 					value={minTitleLength}
@@ -36,6 +36,7 @@ export const PostList = ({ postsData = [] }) => {
 						попробуйте другие настройки фильтра.
 					</DataNotFound>
 				)}
+				<h2 className={styles.title}>Все посты:</h2>
 				{filteredData.map((postData) => {
 					const postComments = commentsData.filter(
 						(comment) => comment.postId === postData.id

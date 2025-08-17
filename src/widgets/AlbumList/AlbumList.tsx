@@ -2,9 +2,11 @@ import styles from "./AlbumList.module.css"
 import { AlbumCard } from "../../entities/albums/ui/AlbumCard"
 import { Container } from "../../shared/ui/Container/Container"
 import { useLocation } from "react-router"
+import { BackLink } from "../../shared/ui/BackLink/BackLink"
+
+export const AlbumList = ({ albumsData = [], title }) => {
 	const location = useLocation()
 
-export const AlbumList = ({ albumsData = [] }) => {
 	return (
 		<section>
 			<Container>
@@ -12,7 +14,7 @@ export const AlbumList = ({ albumsData = [] }) => {
 					<BackLink position="center" />
 				)}
 				<div className={styles.wrapper}>
-					<h2 className={styles.title}>Все альбомы:</h2>
+					<h2 className={styles.title}>{title}</h2>
 					<ul className={styles.list}>
 						{albumsData.map(({ id, title }) => {
 							return (

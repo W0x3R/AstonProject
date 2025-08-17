@@ -16,6 +16,7 @@ export const AlbumPhotosPage = () => {
 			{albumPhotos.length === 0 && (
 				<DataNotFound>Похоже, что изображения не найдены.</DataNotFound>
 			)}
+			<h2 className={styles.title}>Фотографии альбома №{`${albumId}`}:</h2>
 			<ul className={styles.list}>
 				{albumPhotos.map(({ id, title, url }) => {
 					return (
