@@ -6,7 +6,7 @@ export const UserCard = ({ userData }) => {
 			<div className={styles["info-wrapper"]}>
 				<h2 className={styles.title}>Данные о пользователе:</h2>
 				<p className={styles.info}>Имя: {userData.name}</p>
-				<p className={styles.info}>Никнейм: {userData.userDataname}</p>
+				<p className={styles.info}>Никнейм: {userData.username}</p>
 				<a className={styles.info} href={`mailto:${userData.email}`}>
 					Емейл: {userData.email}
 				</a>
