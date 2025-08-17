@@ -18,5 +18,11 @@ export const AlbumsPage = () => {
 		return () => clearTimeout(timer)
 	}, [])
 
-	return <AlbumListWithLoading isLoading={isLoading} albumsData={data} />
+	return (
+		<AlbumListWithLoading
+			isLoading={isLoading}
+			albumsData={data}
+			title="Все альбомы:"
+		/>
+	)
 }
