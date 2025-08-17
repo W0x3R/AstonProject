@@ -1,0 +1,26 @@
+.link-wrapper {
+	display: flex;
+}
+
+.link-wrapper.end {
+	justify-content: flex-end;
+}
+
+.link-wrapper.center {
+	justify-content: center;
+}
+
+.link {
+	padding-block: 5px;
+	padding-inline: 10px;
+	border-radius: 10px;
+	font-weight: 500;
+	transition: all 0.3s ease-in-out;
+	font-size: 16px;
+	color: var(--color-comment-toggle-button);
+	background-color: var(--color-button-bg-primary);
+
+	&:hover {
+		color: var(--color-comment-toggle-button-hover);
+	}
+}

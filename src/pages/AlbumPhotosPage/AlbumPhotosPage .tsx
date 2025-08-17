@@ -2,8 +2,8 @@ import styles from "./AlbumPhotosPage.module.css"
 import { useParams } from "react-router"
 import { photosData } from "../../entities/photos/model/photosData"
 import React from "react"
-import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
+import { BackLink } from "../../shared/ui/BackLink/BackLink"
 
 export const AlbumPhotosPage = () => {
 	const { id } = useParams()
@@ -12,7 +12,7 @@ export const AlbumPhotosPage = () => {
 
 	return (
 		<section className={styles.section}>
-			<NavigateLink text="Вернуться назад" url={"/albums"} />
+			<BackLink position="center" />
 			{albumPhotos.length === 0 && (
 				<DataNotFound>Похоже, что изображения не найдены.</DataNotFound>
 			)}
