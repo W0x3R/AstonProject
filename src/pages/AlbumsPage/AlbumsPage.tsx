@@ -13,8 +13,9 @@ export const AlbumsPage = () => {
 		const timer = setTimeout(() => {
 			setData(albumsData)
 			setIsLoading(false)
-			return () => clearTimeout(timer)
 		}, 500)
+
+		return () => clearTimeout(timer)
 	}, [])
 
 	return <AlbumListWithLoading isLoading={isLoading} albumsData={data} />
