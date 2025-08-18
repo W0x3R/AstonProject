@@ -5,15 +5,14 @@ import { commentsData } from "../../entities/post/model/commentsData"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { CommentList } from "../../widgets/CommentList/ui/CommentList"
 import { Container } from "../../shared/ui/Container/Container"
-import { useEffect, useRef } from "react"
-import { BackLink } from "../../shared/ui/BackLink/BackLink"
+import { filterPostComments } from "../../features/filterPostComments/lib/filterPostComments"
 
 export const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
 
 	const post = postsData.find((post) => post.id === postId)
-	const comments = commentsData.filter((comment) => comment.postId === postId)
+	const comments = filterPostComments(commentsData, postId)
 	const sectionRef = useRef(null)
 	const postWrapperRef = useRef(null)
 

@@ -1,12 +1,12 @@
 import { useParams } from "react-router"
 import { Container } from "../../shared/ui/Container/Container"
 import styles from "./TodosList.module.css"
-import { BackLink } from "../../shared/ui/BackLink/BackLink"
+import { filterUserAlbums } from "../../features/filterUserAlbums/filterUserAlbums"
 
 export const TodosList = ({ todosData = [] }) => {
 	const { id } = useParams()
 	const todosId = Number(id)
-	const userTodos = todosData.filter((todo) => todo.userId === todosId)
+	const userTodos = filterUserAlbums(todosData, todosId)
 
 	return (
 		<section className={styles.section}>
