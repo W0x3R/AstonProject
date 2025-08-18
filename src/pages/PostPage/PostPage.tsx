@@ -18,10 +18,12 @@ export const PostPage = () => {
 	const postWrapperRef = useRef(null)
 
 	useEffect(() => {
-		const getWrapperHeight =
-			postWrapperRef.current.getBoundingClientRect().height
-		sectionRef.current.style.minHeight = `${getWrapperHeight + 10}px`
-	}, [])
+		if (sectionRef.current && postWrapperRef.current) {
+			const getWrapperHeight =
+				postWrapperRef.current.getBoundingClientRect().height
+			sectionRef.current.style.minHeight = `${getWrapperHeight + 10}px`
+		}
+	}, [comments])
 
 	return (
 		<section ref={sectionRef}>
