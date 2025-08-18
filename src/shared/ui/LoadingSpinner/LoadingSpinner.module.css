@@ -15,7 +15,6 @@
 .spinner {
 	display: inline-block;
 	animation: rotateSpinner 0.8s infinite linear;
-	transition: fill 1s ease-in-out;
 	cursor: default;
 	fill: var(--fill-loading-spinner);
 }

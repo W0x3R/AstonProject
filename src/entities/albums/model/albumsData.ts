@@ -9,7 +9,6 @@ export const albumsData = [
 	{ userId: 1, id: 8, title: "Городские улицы" },
 	{ userId: 1, id: 9, title: "Спорт и активность" },
 	{ userId: 1, id: 10, title: "Семейные праздники" },
-
 	{ userId: 2, id: 11, title: "Воспоминания детства" },
 	{ userId: 2, id: 12, title: "Любимые книги" },
 	{ userId: 2, id: 13, title: "Фото с концертов" },
@@ -20,7 +19,6 @@ export const albumsData = [
 	{ userId: 2, id: 18, title: "Вечерние прогулки" },
 	{ userId: 2, id: 19, title: "Семейные ужины" },
 	{ userId: 2, id: 20, title: "Романтические моменты" },
-
 	{ userId: 3, id: 21, title: "Путешествия за границу" },
 	{ userId: 3, id: 22, title: "Море и пляж" },
 	{ userId: 3, id: 23, title: "Горы и походы" },
@@ -31,7 +29,6 @@ export const albumsData = [
 	{ userId: 3, id: 28, title: "Фотографии с работы" },
 	{ userId: 3, id: 29, title: "Спорт и активный отдых" },
 	{ userId: 3, id: 30, title: "Природа и пейзажи" },
-
 	{ userId: 4, id: 31, title: "Семейные фотографии" },
 	{ userId: 4, id: 32, title: "Друзья и вечеринки" },
 	{ userId: 4, id: 33, title: "Любимые места" },
@@ -42,7 +39,6 @@ export const albumsData = [
 	{ userId: 4, id: 38, title: "Фото друзей" },
 	{ userId: 4, id: 39, title: "Спорт и фитнес" },
 	{ userId: 4, id: 40, title: "Природа" },
-
 	{ userId: 5, id: 41, title: "Семейные моменты" },
 	{ userId: 5, id: 42, title: "Путешествия" },
 	{ userId: 5, id: 43, title: "Вечер с друзьями" },
@@ -53,7 +49,6 @@ export const albumsData = [
 	{ userId: 5, id: 48, title: "Путешествия" },
 	{ userId: 5, id: 49, title: "Друзья и встречи" },
 	{ userId: 5, id: 50, title: "Спорт и активность" },
-
 	{ userId: 6, id: 51, title: "Мои питомцы" },
 	{ userId: 6, id: 52, title: "Рабочие моменты" },
 	{ userId: 6, id: 53, title: "Творчество и хобби" },
@@ -64,7 +59,6 @@ export const albumsData = [
 	{ userId: 6, id: 58, title: "Любимые книги" },
 	{ userId: 6, id: 59, title: "Концерты и музыка" },
 	{ userId: 6, id: 60, title: "Спорт и активность" },
-
 	{ userId: 7, id: 61, title: "Путешествия за границу" },
 	{ userId: 7, id: 62, title: "Море и пляж" },
 	{ userId: 7, id: 63, title: "Горы и походы" },
@@ -75,7 +69,6 @@ export const albumsData = [
 	{ userId: 7, id: 68, title: "Фотографии с работы" },
 	{ userId: 7, id: 69, title: "Спорт и активный отдых" },
 	{ userId: 7, id: 70, title: "Природа и пейзажи" },
-
 	{ userId: 8, id: 71, title: "Семейные фотографии" },
 	{ userId: 8, id: 72, title: "Друзья и вечеринки" },
 	{ userId: 8, id: 73, title: "Любимые места" },
@@ -86,7 +79,6 @@ export const albumsData = [
 	{ userId: 8, id: 78, title: "Фото друзей" },
 	{ userId: 8, id: 79, title: "Спорт и фитнес" },
 	{ userId: 8, id: 80, title: "Природа" },
-
 	{ userId: 9, id: 81, title: "Семейные моменты" },
 	{ userId: 9, id: 82, title: "Путешествия" },
 	{ userId: 9, id: 83, title: "Вечер с друзьями" },
@@ -97,7 +89,6 @@ export const albumsData = [
 	{ userId: 9, id: 88, title: "Путешествия" },
 	{ userId: 9, id: 89, title: "Друзья и встречи" },
 	{ userId: 9, id: 90, title: "Спорт и активность" },
-
 	{ userId: 10, id: 91, title: "Мои питомцы" },
 	{ userId: 10, id: 92, title: "Рабочие моменты" },
 	{ userId: 10, id: 93, title: "Творчество и хобби" },

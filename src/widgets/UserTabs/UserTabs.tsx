@@ -1,5 +1,5 @@
-import styles from "./UserTabs.module.css"
 import { NavLink } from "react-router"
+import styles from "./UserTabs.module.css"
 
 export const UserTabs = () => {
 	const setIsActive = ({ isActive }) =>

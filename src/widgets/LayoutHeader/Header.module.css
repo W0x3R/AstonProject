@@ -11,12 +11,10 @@
 
 .open-modal-btn {
 	position: relative;
-	padding-block: 5px;
-	padding-inline: 16px;
+	padding: 5px 16px;
 	font-size: 16px;
 	color: var(--color-button-text-primary);
 	background-color: var(--color-button-bg-primary);
-	transition: all 0.3s ease-in-out;
 
 	&:hover {
 		.open-modal-btn-text::before {

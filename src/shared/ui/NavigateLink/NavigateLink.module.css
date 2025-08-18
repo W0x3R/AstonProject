@@ -4,12 +4,10 @@
 }
 
 .link {
-	align-self: end;
-	padding-block: 5px;
-	padding-inline: 10px;
+	padding-block: 6px;
+	padding-inline: 14px;
 	border-radius: 10px;
 	font-weight: 500;
-	transition: all 0.3s ease-in-out;
 	font-size: 16px;
 	color: var(--color-comment-toggle-button);
 	background-color: var(--color-button-bg-primary);

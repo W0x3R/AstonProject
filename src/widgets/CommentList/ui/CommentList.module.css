@@ -27,9 +27,9 @@
 }
 
 .no-comments {
+	text-align: center;
 	font-size: 16px;
 	color: var(--color-text-primary);
-	transition: all 0.3s ease-in-out;
 }
 
 .comment-wrapper:first-of-type {

@@ -1,5 +1,5 @@
-import styles from "./PostList.module.css"
 import { useCallback, useMemo, useState } from "react"
+import styles from "./PostList.module.css"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { commentsData } from "../../entities/post/model/commentsData.js"
 import { CommentList } from "../CommentList/ui/CommentList.js"
