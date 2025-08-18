@@ -4,7 +4,7 @@ import { AlbumCard } from "../../entities/albums/ui/AlbumCard"
 import { Container } from "../../shared/ui/Container/Container"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
 
-export const AlbumList = ({ albumsData = [], title }) => {
+export const AlbumList = ({ albumsData = [], heading }) => {
 	const location = useLocation()
 
 	return (
@@ -14,7 +14,7 @@ export const AlbumList = ({ albumsData = [], title }) => {
 					<BackButton position="center" />
 				)}
 				<div className={styles.wrapper}>
-					<h2 className={styles.title}>{title}</h2>
+					<h2 className={styles.title}>{heading}</h2>
 					<ul className={styles.list}>
 						{albumsData.map(({ id, title }) => {
 							return (

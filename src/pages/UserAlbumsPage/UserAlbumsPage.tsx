@@ -11,7 +11,7 @@ export const UserAlbumsPage = () => {
 	return (
 		<AlbumList
 			albumsData={userAlbums}
-			title={`Альбомы пользователя №${userAlbumsId}`}
+			heading={`Альбомы пользователя №${userAlbumsId}`}
 		/>
 	)
 }

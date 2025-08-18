@@ -22,7 +22,7 @@ export const AlbumsPage = () => {
 		<AlbumListWithLoading
 			isLoading={isLoading}
 			albumsData={data}
-			title="Все альбомы:"
+			heading="Все альбомы:"
 		/>
 	)
 }
