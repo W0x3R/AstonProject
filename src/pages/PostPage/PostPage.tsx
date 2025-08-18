@@ -1,12 +1,13 @@
-import styles from "./PostPage.module.css"
+import { useEffect, useRef } from "react"
 import { useParams } from "react-router"
-import { postsData } from "../../entities/post/model/postsData"
-import { commentsData } from "../../entities/post/model/commentsData"
+import styles from "./PostPage.module.css"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { CommentList } from "../../widgets/CommentList/ui/CommentList"
 import { Container } from "../../shared/ui/Container/Container"
 import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { filterPostComments } from "../../features/filterPostComments/lib/filterPostComments"
+import { commentsData } from "../../entities/post/model/commentsData"
+import { postsData } from "../../entities/post/model/postsData"
 
 export const PostPage = () => {
 	const { id } = useParams()
@@ -26,10 +27,9 @@ export const PostPage = () => {
 	}, [comments])
 
 	return (
-		<section ref={sectionRef}>
+		<section className={styles.section} ref={sectionRef}>
 			<Container>
-				<h2 className={styles.title}>{`Пост пользователя №${postId}:`}</h2>
-
+				<h2 className={styles.title}>Пост пользователя №{postId}:</h2>
 				<div ref={postWrapperRef} className={styles.post__wrapper}>
 					<BackButton position="end" />
 					<PostCard postData={post} />
