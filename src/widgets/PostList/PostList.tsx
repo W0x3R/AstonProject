@@ -26,10 +26,12 @@ export const PostList = ({ postsData = [], errorMessage }) => {
 	return (
 		<section className={styles.section}>
 			<Container>
-				<PostLengthFilter
-					value={minTitleLength}
-					onFilterChange={onFilterChange}
-				/>
+				{filteredData.length > 0 && (
+					<PostLengthFilter
+						value={minTitleLength}
+						onFilterChange={onFilterChange}
+					/>
+				)}
 				{filteredData.length === 0 && (
 					<DataNotFound>
 						{errorMessage ?

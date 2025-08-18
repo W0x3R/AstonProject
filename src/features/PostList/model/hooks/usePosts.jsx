@@ -1,25 +1,32 @@
 import { useEffect, useState } from "react"
+import { GLOBAL_CLASSES } from "../../../../shared/constants/globalClasses"
 
-export const usePosts = (url) => {
-	const [data, setData] = useState([])
+export const usePosts = (postId) => {
+	const [posts, setPosts] = useState([])
+	const [post, setPost] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
-	const [error, setError] = useState(null)
+	const [errorMessage, setErrorMessage] = useState(null)
 
 	useEffect(() => {
 		const fetchPosts = async () => {
 			try {
-				const response = await fetch(url)
+				const response = await fetch(GLOBAL_CLASSES.postsUrl)
 				if (!response.ok) throw new Error("Ошибка загрузки постов")
 				const postsData = await response.json()
-				setData(postsData)
+				setPosts(postsData)
+				if (postId) {
+					const getPostById = postsData.find((post) => post.id === postId)
+					setPost(getPostById)
+				} else {
+					throw new Error("Ошибка загрузки поста")
+				}
 			} catch (error) {
-				setError(error.message)
+				setErrorMessage(error.message)
 			} finally {
 				setIsLoading(false)
 			}
 		}
 		fetchPosts()
-	}, [url])
-
-	return { data, isLoading, error }
+	}, [])
+	return { posts, post, isLoading, errorMessage }
 }
