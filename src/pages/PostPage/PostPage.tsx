@@ -5,6 +5,7 @@ import { commentsData } from "../../entities/post/model/commentsData"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { CommentList } from "../../widgets/CommentList/ui/CommentList"
 import { Container } from "../../shared/ui/Container/Container"
+import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { filterPostComments } from "../../features/filterPostComments/lib/filterPostComments"
 
 export const PostPage = () => {
@@ -28,7 +29,7 @@ export const PostPage = () => {
 				<h2 className={styles.title}>{`Пост пользователя №${postId}:`}</h2>
 
 				<div ref={postWrapperRef} className={styles.post__wrapper}>
-					<BackLink position="end" />
+					<BackButton position="end" />
 					<PostCard postData={post} />
 					<CommentList postComments={comments} />
 				</div>

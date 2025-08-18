@@ -1,6 +1,7 @@
 import { useParams } from "react-router"
-import { Container } from "../../shared/ui/Container/Container"
 import styles from "./TodosList.module.css"
+import { Container } from "../../shared/ui/Container/Container"
+import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { filterUserAlbums } from "../../features/filterUserAlbums/filterUserAlbums"
 
 export const TodosList = ({ todosData = [] }) => {
@@ -11,7 +12,7 @@ export const TodosList = ({ todosData = [] }) => {
 	return (
 		<section className={styles.section}>
 			<Container>
-				<BackLink position="center" />
+				<BackButton position="center" />
 
 				<div className={styles["todos-wrapper"]}>
 					<h2

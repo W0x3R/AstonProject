@@ -1,8 +1,8 @@
+import { useLocation } from "react-router"
 import styles from "./AlbumList.module.css"
 import { AlbumCard } from "../../entities/albums/ui/AlbumCard"
 import { Container } from "../../shared/ui/Container/Container"
-import { useLocation } from "react-router"
-import { BackLink } from "../../shared/ui/BackLink/BackLink"
+import { BackButton } from "../../shared/ui/BackButton/BackButton"
 
 export const AlbumList = ({ albumsData = [], title }) => {
 	const location = useLocation()
@@ -11,7 +11,7 @@ export const AlbumList = ({ albumsData = [], title }) => {
 		<section>
 			<Container>
 				{!location.pathname.startsWith("/albums") && (
-					<BackLink position="center" />
+					<BackButton position="center" />
 				)}
 				<div className={styles.wrapper}>
 					<h2 className={styles.title}>{title}</h2>
