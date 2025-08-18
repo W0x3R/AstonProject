@@ -1,33 +1,22 @@
-import styles from "./AlbumPhotosPage.module.css"
-import { useParams } from "react-router"
+import { useEffect, useState } from "react"
+import { withLoading } from "../../shared/lib/hoc/withLoading"
+import { PhotosList } from "../../widgets/PhotosList/PhotosList"
 import { photosData } from "../../entities/photos/model/photosData"
-import React from "react"
-import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
-import { BackLink } from "../../shared/ui/BackLink/BackLink"
+
+const PhotosListWithLoading = withLoading(PhotosList)
 
 export const AlbumPhotosPage = () => {
-	const { id } = useParams()
-	const albumId = Number(id)
-	const albumPhotos = photosData.filter((photo) => photo.albumId === albumId)
+	const [data, setData] = useState([])
+	const [isLoading, setIsLoading] = useState(true)
 
-	return (
-		<section className={styles.section}>
-			<BackLink position="center" />
-			{albumPhotos.length === 0 && (
-				<DataNotFound>Похоже, что изображения не найдены.</DataNotFound>
-			)}
-			<h2 className={styles.title}>Фотографии альбома №{`${albumId}`}:</h2>
-			<ul className={styles.list}>
-				{albumPhotos.map(({ id, title, url }) => {
-					return (
-						<React.Fragment key={id}>
-							<li className={styles["list-item"]}>
-								<img src={url} alt={title} />
-							</li>
-						</React.Fragment>
-					)
-				})}
-			</ul>
-		</section>
-	)
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setData(photosData)
+			setIsLoading(false)
+		}, 500)
+
+		return () => clearTimeout(timer)
+	}, [])
+
+	return <PhotosListWithLoading photosData={data} isLoading={isLoading} />
 }
