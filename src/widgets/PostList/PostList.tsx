@@ -9,7 +9,7 @@ import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLeng
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
 
-export const PostList = ({ postsData = [] }) => {
+export const PostList = ({ postsData = [], errorMessage }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
 
 	const filteredData = useMemo(() => {
@@ -32,11 +32,17 @@ export const PostList = ({ postsData = [] }) => {
 				/>
 				{filteredData.length === 0 && (
 					<DataNotFound>
-						Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
-						попробуйте другие настройки фильтра.
+						{errorMessage ?
+							errorMessage
+						:	`Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
+						попробуйте другие настройки фильтра.`
+						}
 					</DataNotFound>
 				)}
-				<h2 className={styles.title}>Все посты:</h2>
+				{filteredData.length > 0 && (
+					<h2 className={styles.title}>Все посты:</h2>
+				)}
+
 				{filteredData.map((postData) => {
 					const postComments = commentsData.filter(
 						(comment) => comment.postId === postData.id

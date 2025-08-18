@@ -1,22 +1,18 @@
-import { useEffect, useState } from "react"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
+import { usePosts } from "../../features/PostList/model/hooks/usePosts"
 import { PostList as OriginalPostsList } from "../../widgets/PostList/PostList"
-import { postsData } from "../../entities/post/model/postsData"
+import { GLOBAL_CLASSES } from "../../shared/constants/globalClasses"
 
 const PostListsWithLoading = withLoading(OriginalPostsList)
 
 export const PostsPage = () => {
-	const [data, setData] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
+	const { data, isLoading, error } = usePosts(GLOBAL_CLASSES.postsUrl)
 
-	useEffect(() => {
-		// имитация загрузки данных с сервера
-		const timer = setTimeout(() => {
-			setData(postsData)
-			setIsLoading(false)
-		}, 500)
-		return () => clearTimeout(timer)
-	}, [])
-
-	return <PostListsWithLoading isLoading={isLoading} postsData={data} />
+	return (
+		<PostListsWithLoading
+			isLoading={isLoading}
+			postsData={data}
+			errorMessage={error}
+		/>
+	)
 }
