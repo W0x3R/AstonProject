@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useState } from "react"
 import styles from "./PostList.module.css"
 import { PostCard } from "../../entities/post/ui/PostCard"
-import { commentsData } from "../../entities/post/model/commentsData.js"
 import { CommentList } from "../CommentList/ui/CommentList.js"
 import { Container } from "../../shared/ui/Container/Container"
 import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter.js"
@@ -9,7 +8,7 @@ import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLeng
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
 
-export const PostList = ({ postsData = [], errorMessage }) => {
+export const PostList = ({ postsData, error }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
 
 	const filteredData = useMemo(() => {
@@ -26,34 +25,35 @@ export const PostList = ({ postsData = [], errorMessage }) => {
 	return (
 		<section className={styles.section}>
 			<Container>
-				{filteredData.length > 0 && (
+				{!error && (
 					<PostLengthFilter
 						value={minTitleLength}
 						onFilterChange={onFilterChange}
 					/>
 				)}
-				{filteredData.length === 0 && (
+
+				{error && (
 					<DataNotFound>
-						{errorMessage ?
-							errorMessage
-						:	`Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
-						попробуйте другие настройки фильтра.`
-						}
+						Ошибка загрузки данных с сервера. Попробуйте повторить позже.
 					</DataNotFound>
 				)}
-				{filteredData.length > 0 && (
-					<h2 className={styles.title}>Все посты:</h2>
+
+				{!error && filteredData.length === 0 && (
+					<DataNotFound>
+						Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
+						попробуйте другие настройки фильтра.
+					</DataNotFound>
 				)}
 
+				{!error && filteredData.length > 0 && (
+					<h2 className={styles.title}>Все посты:</h2>
+				)}
 				{filteredData.map((postData) => {
-					const postComments = commentsData.filter(
-						(comment) => comment.postId === postData.id
-					)
 					return (
 						<div className={styles.post__wrapper} key={postData.id}>
 							<NavigateLink text="Открыть пост" url={`/posts/${postData.id}`} />
 							<PostCard postData={postData} />
-							<CommentList postComments={postComments} />
+							<CommentList postId={postData.id} />
 						</div>
 					)
 				})}

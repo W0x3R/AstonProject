@@ -1,14 +1,19 @@
 import { useCallback, useState } from "react"
 import styles from "./CommentList.module.css"
 import { Button } from "../../../shared/ui/Button/Button"
+import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/commentsApi"
+import { LoadingSpinner } from "../../../shared/ui/LoadingSpinner/LoadingSpinner"
 
-export const CommentList = ({ postComments = [] }) => {
+export const CommentList = ({ postId }) => {
+	const {
+		data: commentsByPostId = [],
+		isLoading,
+		error,
+	} = useGetCommentsByPostIdQuery(postId)
+
 	const [expandedComments, setExpandedComments] = useState([])
-	if (postComments.length === 0)
-		return <p className={styles["no-comments"]}>Комментарии отсутствуют</p>
 
-	const firstPostId = postComments.find((comment) => comment.postId)?.postId
-	const isCollapsed = expandedComments.includes(firstPostId)
+	const isCollapsed = expandedComments.includes(postId)
 
 	const toggleComment = useCallback((commentPostId) => {
 		setExpandedComments((prev) =>
@@ -18,17 +23,24 @@ export const CommentList = ({ postComments = [] }) => {
 		)
 	}, [])
 
+	if (error)
+		return <p className={styles["no-comments"]}>Комментарии отсутствуют</p>
+
+	if (isLoading) {
+		return <LoadingSpinner size="small" />
+	}
+
 	return (
 		<div>
 			<Button
 				className={styles["toggle-comment-btn"]}
-				onClick={() => toggleComment(firstPostId)}
+				onClick={() => toggleComment(postId)}
 			>
 				{isCollapsed ?
-					`Показать комментарии (${postComments.length})`
+					`Показать комментарии (${commentsByPostId.length})`
 				:	"Свернуть комментарии"}
 			</Button>
-			{postComments.map(({ id, name, email, body }) => {
+			{commentsByPostId.map(({ id, name, email, body }) => {
 				return (
 					<div
 						className={`${styles["comment-wrapper"]} ${isCollapsed ? styles.collapsed : ""}`}

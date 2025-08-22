@@ -1,17 +1,17 @@
 import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { usePosts } from "../../features/PostList/model/hooks/usePosts"
 import { PostList as OriginalPostsList } from "../../widgets/PostList/PostList"
+import { useGetPostsQuery } from "../../entities/post/api/postsApi"
 
 const PostListsWithLoading = withLoading(OriginalPostsList)
 
 export const PostsPage = () => {
-	const { posts, isLoading, errorMessage } = usePosts()
+	const { data: postsData = [], isLoading, error } = useGetPostsQuery()
 
 	return (
 		<PostListsWithLoading
 			isLoading={isLoading}
-			postsData={posts}
-			errorMessage={errorMessage}
+			postsData={postsData}
+			error={error}
 		/>
 	)
 }
