@@ -8,11 +8,15 @@ import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { LoadingSpinner } from "../../shared/ui/LoadingSpinner/LoadingSpinner"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
 import { useGetPostByIdQuery } from "../../entities/post/api/postsApi"
+import { useSelector } from "react-redux"
+import { selectPostById } from "../../entities/post/model/slice/postSlice"
 
 export const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
 	const { data: postData = [], isLoading, error } = useGetPostByIdQuery(postId)
+
+	const postFromSlice = useSelector((state) => selectPostById(state, postId))
 
 	const sectionRef = useRef(null)
 	const postWrapperRef = useRef(null)
@@ -24,7 +28,7 @@ export const PostPage = () => {
 		return <DataNotFound>{error}</DataNotFound>
 	}
 
-	if (!postData) {
+	if (!postData && !postFromSlice) {
 		return <p>Пост не найден</p>
 	}
 
@@ -34,7 +38,7 @@ export const PostPage = () => {
 				<h2 className={styles.title}>Пост пользователя №{postId}:</h2>
 				<div ref={postWrapperRef} className={styles.post__wrapper}>
 					<BackButton position="end" />
-					<PostCard postData={postData} />
+					<PostCard postData={postFromSlice || postData} />
 					<CommentList postId={postId} />
 				</div>
 			</Container>

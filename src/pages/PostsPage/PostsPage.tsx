@@ -1,16 +1,19 @@
 import { withLoading } from "../../shared/lib/hoc/withLoading"
 import { PostList as OriginalPostsList } from "../../widgets/PostList/PostList"
 import { useGetPostsQuery } from "../../entities/post/api/postsApi"
+import { selectAllPosts } from "../../entities/post/model/slice/postSlice"
+import { useSelector } from "react-redux"
 
 const PostListsWithLoading = withLoading(OriginalPostsList)
 
 export const PostsPage = () => {
-	const { data: postsData = [], isLoading, error } = useGetPostsQuery()
+	const { isLoading, error } = useGetPostsQuery()
+	const postsFromSlice = useSelector(selectAllPosts)
 
 	return (
 		<PostListsWithLoading
 			isLoading={isLoading}
-			postsData={postsData}
+			postsData={postsFromSlice}
 			error={error}
 		/>
 	)
