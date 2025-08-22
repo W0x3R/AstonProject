@@ -1,22 +1,26 @@
-import { useEffect, useState } from "react"
-import { todosData } from "../../entities/todos/model/todosData"
+import { useGetTodosByUserIdQuery } from "../../entities/todos/api/todosApi"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
 import { TodosList as OriginalTodoList } from "../../widgets/TodosList/TodosList"
+import { useParams } from "react-router"
 
 const TodosWithLoading = withLoading(OriginalTodoList)
 
 export const UserTodosPage = () => {
-	const [data, setData] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
+	const { id } = useParams()
+	const userId = Number(id)
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setData(todosData)
-			setIsLoading(false)
-		}, 500)
+	const {
+		data: todosData = [],
+		isLoading,
+		error,
+	} = useGetTodosByUserIdQuery(userId)
 
-		return () => clearTimeout(timer)
-	}, [])
-
-	return <TodosWithLoading todosData={data} isLoading={isLoading} />
+	return (
+		<TodosWithLoading
+			todosData={todosData}
+			isLoading={isLoading}
+			error={error}
+			userId={userId}
+		/>
+	)
 }
