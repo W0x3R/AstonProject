@@ -1,28 +1,19 @@
-import { useEffect, useState } from "react"
-import { albumsData } from "../../entities/albums/model/albumsData"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
 import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/AlbumList"
+import { useGetAlbumsQuery } from "../../entities/albums/api/albumsApi"
 
 const AlbumListWithLoading = withLoading(OriginalAlbumList)
 
 export const AlbumsPage = () => {
-	const [data, setData] = useState([])
-	const [isLoading, setIsLoading] = useState(true)
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setData(albumsData)
-			setIsLoading(false)
-		}, 500)
-
-		return () => clearTimeout(timer)
-	}, [])
+	const { data: albumsData = [], isLoading, error } = useGetAlbumsQuery()
+	console.log(albumsData)
 
 	return (
 		<AlbumListWithLoading
-			isLoading={isLoading}
-			albumsData={data}
+			albumsData={albumsData}
 			heading="Все альбомы:"
+			isLoading={isLoading}
+			error={error}
 		/>
 	)
 }

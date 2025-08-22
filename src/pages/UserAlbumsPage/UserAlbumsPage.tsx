@@ -1,17 +1,26 @@
 import { useParams } from "react-router"
-import { AlbumList } from "../../widgets/AlbumList/AlbumList"
-import { albumsData } from "../../entities/albums/model/albumsData"
-import { filterUserAlbums } from "../../features/filterUserAlbums/filterUserAlbums"
+import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/AlbumList"
+import { useGetAlbumsByUserIdQuery } from "../../entities/albums/api/albumsApi"
+import { withLoading } from "../../shared/lib/hoc/withLoading"
+
+const UserAlbumsPageLoading = withLoading(OriginalAlbumList)
 
 export const UserAlbumsPage = () => {
 	const { id } = useParams()
-	const userAlbumsId = Number(id)
-	const userAlbums = filterUserAlbums(albumsData, userAlbumsId)
+	const userId = Number(id)
+
+	const {
+		data: albumsData = [],
+		isLoading,
+		error,
+	} = useGetAlbumsByUserIdQuery(userId)
 
 	return (
-		<AlbumList
-			albumsData={userAlbums}
-			heading={`Альбомы пользователя №${userAlbumsId}`}
+		<UserAlbumsPageLoading
+			albumsData={albumsData}
+			heading={`Альбомы пользователя №${userId}`}
+			isLoading={isLoading}
+			error={error}
 		/>
 	)
 }

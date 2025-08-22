@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { postsApi } from "../../../entities/post/api/postsApi"
 import { commentsApi } from "../../../entities/comments/api/commentsApi"
+import { albumsApi } from "../../../entities/albums/api/albumsApi"
 import postReducer from "../../../entities/post/model/slice/postSlice"
 
 export const store = configureStore({
@@ -8,9 +9,11 @@ export const store = configureStore({
 		posts: postReducer,
 		[postsApi.reducerPath]: postsApi.reducer,
 		[commentsApi.reducerPath]: commentsApi.reducer,
+		[albumsApi.reducerPath]: albumsApi.reducer,
 	},
 	middleware: (getDefaultMiddleware) =>
 		getDefaultMiddleware()
 			.concat(postsApi.middleware)
-			.concat(commentsApi.middleware),
+			.concat(commentsApi.middleware)
+			.concat(albumsApi.middleware),
 })
