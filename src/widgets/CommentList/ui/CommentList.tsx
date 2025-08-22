@@ -1,27 +1,29 @@
-import { useCallback, useState } from "react"
+import { useCallback, useState, useRef, useEffect } from "react"
 import styles from "./CommentList.module.css"
 import { Button } from "../../../shared/ui/Button/Button"
 import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/commentsApi"
 import { LoadingSpinner } from "../../../shared/ui/LoadingSpinner/LoadingSpinner"
 
 export const CommentList = ({ postId }) => {
+	const [expanded, setExpanded] = useState(false)
+	const contentRef = useRef(null)
+	const [maxHeight, setMaxHeight] = useState("0px")
+
 	const {
 		data: commentsByPostId = [],
 		isLoading,
 		error,
-	} = useGetCommentsByPostIdQuery(postId)
+	} = useGetCommentsByPostIdQuery(postId, { skip: !expanded })
 
-	const [expandedComments, setExpandedComments] = useState([])
+	const toggleComments = useCallback(() => setExpanded((prev) => !prev), [])
 
-	const isCollapsed = expandedComments.includes(postId)
-
-	const toggleComment = useCallback((commentPostId) => {
-		setExpandedComments((prev) =>
-			prev.includes(commentPostId) ?
-				prev.filter((postId) => postId !== commentPostId)
-			:	[...prev, commentPostId]
-		)
-	}, [])
+	useEffect(() => {
+		if (expanded && contentRef.current) {
+			setMaxHeight(`${contentRef.current.scrollHeight}px`)
+		} else {
+			setMaxHeight("0px")
+		}
+	}, [expanded, commentsByPostId])
 
 	if (error)
 		return <p className={styles["no-comments"]}>Комментарии отсутствуют</p>
@@ -32,26 +34,22 @@ export const CommentList = ({ postId }) => {
 
 	return (
 		<div>
-			<Button
-				className={styles["toggle-comment-btn"]}
-				onClick={() => toggleComment(postId)}
-			>
-				{isCollapsed ?
-					`Показать комментарии (${commentsByPostId.length})`
-				:	"Свернуть комментарии"}
+			<Button className={styles["toggle-comment-btn"]} onClick={toggleComments}>
+				{expanded ? "Свернуть комментарии" : "Показать комментарии"}
 			</Button>
-			{commentsByPostId.map(({ id, name, email, body }) => {
-				return (
-					<div
-						className={`${styles["comment-wrapper"]} ${isCollapsed ? styles.collapsed : ""}`}
-						key={id}
-					>
+			<div
+				ref={contentRef}
+				className={`${styles["comment-wrapper"]} ${expanded ? styles.open : ""}`}
+				style={{ maxHeight }}
+			>
+				{commentsByPostId.map(({ id, name, email, body }) => (
+					<div className={styles.comment} key={id}>
 						<h2 className={styles.title}>{name}</h2>
 						<h3 className={styles.email}>{email}</h3>
 						<p className={styles.body}>{body}</p>
 					</div>
-				)
-			})}
+				))}
+			</div>
 		</div>
 	)
 }
