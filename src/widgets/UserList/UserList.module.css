@@ -1,5 +1,6 @@
 .section {
 	padding-block: 20px;
+	min-height: 80vh;
 }
 
 .user-wrapper {
@@ -17,5 +18,11 @@
 .title {
 	margin-bottom: 20px;
 	text-align: center;
+	color: var(--color-text-primary);
+}
+
+.no-users {
+	text-align: center;
+	font-size: 16px;
 	color: var(--color-text-primary);
 }

@@ -6,7 +6,6 @@ const AlbumListWithLoading = withLoading(OriginalAlbumList)
 
 export const AlbumsPage = () => {
 	const { data: albumsData = [], isLoading, error } = useGetAlbumsQuery()
-	console.log(albumsData)
 
 	return (
 		<AlbumListWithLoading

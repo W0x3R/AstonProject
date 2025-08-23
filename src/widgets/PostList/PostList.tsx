@@ -25,39 +25,47 @@ export const PostList = ({ postsData, error }) => {
 	return (
 		<section className={styles.section}>
 			<Container>
-				{!error && (
+				{error && (
+					<DataNotFound>
+						Ошибка загрузки постов. Попробуйте повторить позже.
+					</DataNotFound>
+				)}
+
+				{!error && postsData.length !== 0 && (
 					<PostLengthFilter
 						value={minTitleLength}
 						onFilterChange={onFilterChange}
 					/>
 				)}
 
-				{error && (
-					<DataNotFound>
-						Ошибка загрузки постов и комментариев с сервера. Попробуйте
-						повторить позже.
-					</DataNotFound>
+				{!error && postsData.length === 0 && (
+					<p className={styles["no-posts"]}>Постов пока нет.</p>
 				)}
 
-				{!error && filteredData.length === 0 && (
-					<DataNotFound>
+				{!error && postsData.length !== 0 && filteredData.length === 0 && (
+					<p className={styles["no-posts"]}>
 						Похоже, что постов с такой длиной заголовка нет. Пожалуйста,
 						попробуйте другие настройки фильтра.
-					</DataNotFound>
+					</p>
 				)}
 
 				{!error && filteredData.length > 0 && (
-					<h2 className={styles.title}>Все посты:</h2>
+					<>
+						<h2 className={styles.title}>Все посты:</h2>
+						{filteredData.map((postData) => {
+							return (
+								<div className={styles.post__wrapper} key={postData.id}>
+									<NavigateLink
+										text="Открыть пост"
+										url={`/posts/${postData.id}`}
+									/>
+									<PostCard postData={postData} />
+									<CommentList postId={postData.id} />
+								</div>
+							)
+						})}
+					</>
 				)}
-				{filteredData.map((postData) => {
-					return (
-						<div className={styles.post__wrapper} key={postData.id}>
-							<NavigateLink text="Открыть пост" url={`/posts/${postData.id}`} />
-							<PostCard postData={postData} />
-							<CommentList postId={postData.id} />
-						</div>
-					)
-				})}
 			</Container>
 		</section>
 	)

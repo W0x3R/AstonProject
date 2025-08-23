@@ -14,33 +14,35 @@ import { selectPostById } from "../../entities/post/model/slice/postSlice"
 export const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
-	const { data: postData = [], isLoading, error } = useGetPostByIdQuery(postId)
-
+	const { data: postData = {}, isLoading, error } = useGetPostByIdQuery(postId)
 	const postFromSlice = useSelector((state) => selectPostById(state, postId))
-
 	const sectionRef = useRef(null)
 	const postWrapperRef = useRef(null)
 
 	if (isLoading) {
 		return <LoadingSpinner size="small" />
 	}
-	if (error) {
-		return <DataNotFound>{error}</DataNotFound>
-	}
-
-	if (!postData && !postFromSlice) {
-		return <p>Пост не найден</p>
-	}
-
 	return (
 		<section className={styles.section} ref={sectionRef}>
 			<Container>
-				<h2 className={styles.title}>Пост пользователя №{postId}:</h2>
-				<div ref={postWrapperRef} className={styles.post__wrapper}>
-					<BackButton position="end" />
-					<PostCard postData={postFromSlice || postData} />
-					<CommentList postId={postId} />
-				</div>
+				{error && (
+					<>
+						<BackButton position="center" />
+						<DataNotFound>
+							Ошибка загрузки поста. Попробуйте повторить позже.
+						</DataNotFound>
+					</>
+				)}
+				{!error && (
+					<>
+						<h2 className={styles.title}>Пост пользователя №{postId}:</h2>
+						<div ref={postWrapperRef} className={styles.post__wrapper}>
+							<BackButton position="end" />
+							<PostCard postData={postFromSlice || postData} />
+							<CommentList postId={postId} />
+						</div>
+					</>
+				)}
 			</Container>
 		</section>
 	)

@@ -1,5 +1,6 @@
 .section {
 	padding-block: 20px;
+	min-height: 80vh;
 }
 
 .title {
@@ -34,5 +35,12 @@
 
 .todo-completed {
 	font-size: 18px;
+	color: var(--color-text-primary);
+}
+
+.no-todos {
+	padding-block: 16px;
+	text-align: center;
+	font-size: 16px;
 	color: var(--color-text-primary);
 }
