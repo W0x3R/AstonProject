@@ -18,12 +18,13 @@ export const CommentList = ({ postComments = [] }) => {
 		)
 	}, [])
 
+	const handleToggle = useCallback(() => {
+		toggleComment(firstPostId)
+	}, [toggleComment, firstPostId])
+
 	return (
 		<div>
-			<Button
-				className={styles["toggle-comment-btn"]}
-				onClick={() => toggleComment(firstPostId)}
-			>
+			<Button className={styles["toggle-comment-btn"]} onClick={handleToggle}>
 				{isCollapsed ?
 					`Показать комментарии (${postComments.length})`
 				:	"Свернуть комментарии"}
