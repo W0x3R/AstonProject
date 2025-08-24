@@ -1,0 +1,38 @@
+.section {
+	padding-block: 20px;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-align: center;
+	color: var(--color-text-primary);
+}
+
+.todos-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	padding-block: 20px;
+	width: 100%;
+}
+
+.todo-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	width: 70%;
+	padding: 15px;
+	border: 2px solid var(--color-border-primary);
+	border-radius: 20px;
+}
+
+.todo-title {
+	font-size: 20px;
+	color: var(--color-text-primary);
+}
+
+.todo-completed {
+	font-size: 18px;
+	color: var(--color-text-primary);
+}

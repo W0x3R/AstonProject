@@ -1,0 +1,16 @@
+.section {
+	padding-block: 20px;
+}
+
+.post__wrapper {
+	padding: 15px;
+	margin-bottom: 25px;
+	border: 2px solid var(--color-border-primary);
+	border-radius: 20px;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-align: center;
+	color: var(--color-text-primary);
+}

@@ -1,0 +1,31 @@
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	margin-bottom: 20px;
+}
+
+.label {
+	cursor: pointer;
+	font-size: 16px;
+	color: var(--color-text-primary);
+}
+
+.input {
+	padding: 4px 6px;
+	max-width: 110px;
+	text-align: center;
+	outline: none;
+	border: 0;
+	border-radius: 10px;
+	background: transparent;
+	color: var(--color-text-primary);
+	border: 2.5px solid var(--color-filter-input-border);
+	transition: transform 0.3s linear;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.03);
+	}
+}
