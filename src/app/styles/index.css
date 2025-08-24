@@ -1,0 +1,70 @@
+@import url(./normalize.css);
+
+html {
+	user-select: none;
+}
+
+body {
+	--bg-body-image: url("../../shared/assets/images/light-bg.webp");
+	--color-text-primary: black;
+	--color-bg-primary: white;
+	--color-border-primary: black;
+	--color-header-bg: #00000005;
+	--color-button-text-primary: white;
+	--color-button-bg-primary: black;
+	--color-modal-overlay: #000000d4;
+	--color-footer-bg: #00000005;
+	--fill-logo: black;
+	--color-theme-btn-bg: #ffffffab;
+	--fill-logo-theme: black;
+	--fill-loading-spinner: black;
+	--color-comment-toggle-button: #d5d5d5;
+	--color-comment-toggle-button-hover: white;
+	--color-filter-input-border: #0000002e;
+	padding: 0;
+	font-family: "VelaSans", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.5px;
+	min-height: 100%;
+	background-image: var(--bg-body-image);
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;
+}
+
+body.dark {
+	--bg-body-image: url("../../shared/assets/images/dark-bg.webp");
+	--color-text-primary: #e1e3e6;
+	--color-bg-primary: black;
+	--color-border-primary: white;
+	--color-header-bg: #ffffff0f;
+	--color-button-text-primary: black;
+	--color-button-bg-primary: white;
+	--color-modal-overlay: #626262d4;
+	--color-footer-bg: #ffffff0f;
+	--fill-logo: white;
+	--color-theme-btn-bg: #00000054;
+	--fill-logo-theme: white;
+	--fill-loading-spinner: white;
+	--color-comment-toggle-button: #504a4a;
+	--color-comment-toggle-button-hover: black;
+	--color-filter-input-border: #e1e3e6;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-between;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
