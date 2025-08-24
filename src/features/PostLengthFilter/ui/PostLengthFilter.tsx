@@ -1,6 +1,9 @@
+import { memo } from "react"
 import styles from "./PostLengthFilter.module.css"
 
-export const PostLengthFilter = ({ value, onFilterChange }) => {
+const PostLengthFilter = ({ onFilterChange }) => {
+	const handleFilterChange = (e) => onFilterChange(e.target.value)
+
 	return (
 		<form className={styles.form}>
 			<label className={styles.label} htmlFor="post-length">
@@ -9,8 +12,7 @@ export const PostLengthFilter = ({ value, onFilterChange }) => {
 			<input
 				id="post-length"
 				className={styles.input}
-				onChange={(e) => onFilterChange(e)}
-				value={value}
+				onChange={handleFilterChange}
 				type="number"
 				inputMode="numeric"
 				min={0}
@@ -18,3 +20,5 @@ export const PostLengthFilter = ({ value, onFilterChange }) => {
 		</form>
 	)
 }
+
+export default memo(PostLengthFilter)
