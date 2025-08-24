@@ -3,7 +3,7 @@ import styles from "./PostList.module.css"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { CommentList } from "../CommentList/ui/CommentList.js"
 import { Container } from "../../shared/ui/Container/Container"
-import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthFilter.js"
+import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilter.js"
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength.js"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
@@ -14,15 +14,10 @@ export const PostList = ({ postsData, error, heading }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
 
 	const filteredData = useMemo(() => {
-		const length = minTitleLength
-		return filterByLength(postsData, length)
+		return filterByLength(postsData, minTitleLength)
 	}, [postsData, minTitleLength])
 
-	const onFilterChange = useCallback((e) => {
-		if (e.target.value.length <= 6) {
-			setMinTitleLength(e.target.value)
-		}
-	}, [])
+	const onFilterChange = useCallback((length) => setMinTitleLength(length), [])
 
 	return (
 		<section className={styles.section}>
@@ -35,10 +30,7 @@ export const PostList = ({ postsData, error, heading }) => {
 				)}
 
 				{!error && postsData.length !== 0 && (
-					<PostLengthFilter
-						value={minTitleLength}
-						onFilterChange={onFilterChange}
-					/>
+					<PostLengthFilter onFilterChange={onFilterChange} />
 				)}
 
 				{!error && postsData.length === 0 && (
