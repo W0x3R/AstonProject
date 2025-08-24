@@ -4,7 +4,8 @@ export const PhotoCard = ({ src, title }) => {
 	return (
 		<figure className={styles.figure}>
 			<figcaption className={styles.title}>{title}</figcaption>
-			<img src={src} alt={title} width={640} height={480} loading="lazy" />
+			{/* src оставил пустым, так как серверис по получению фото не работает и падает куча ошибок при загрузке  */}
+			<img src={" "} alt={title} width={640} height={480} loading="lazy" />
 		</figure>
 	)
 }

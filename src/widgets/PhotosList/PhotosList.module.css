@@ -1,6 +1,6 @@
 .section {
 	padding-block: 20px;
-	row-gap: 20px;
+	min-height: 80vh;
 }
 
 .list {
@@ -8,17 +8,23 @@
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-
-	& .list-item:not(:last-of-type) {
-		margin-bottom: 20px;
-	}
+	row-gap: 20px;
 }
 .list-item {
+	min-width: 56%;
+	max-width: 56%;
 	color: var(--color-text-primary);
 }
 
 .title {
 	margin-block: 20px;
 	text-align: center;
+	color: var(--color-text-primary);
+}
+
+.no-photos {
+	padding-block: 20px;
+	text-align: center;
+	font-size: 16px;
 	color: var(--color-text-primary);
 }
