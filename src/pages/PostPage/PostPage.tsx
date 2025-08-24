@@ -35,7 +35,7 @@ export const PostPage = () => {
 				)}
 				{!error && (
 					<>
-						<h2 className={styles.title}>Пост пользователя №{postId}:</h2>
+						<h2 className={styles.title}>Пост №{postId}:</h2>
 						<div ref={postWrapperRef} className={styles.post__wrapper}>
 							<BackButton position="end" />
 							<PostCard postData={postFromSlice || postData} />
