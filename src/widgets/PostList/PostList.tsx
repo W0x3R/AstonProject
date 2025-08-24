@@ -7,7 +7,6 @@ import PostLengthFilter from "../../features/PostLengthFilter/ui/PostLengthFilte
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength.js"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
-import { useGetPostsByUserIdQuery } from "../../entities/post/api/postsApi.js"
 import { BackButton } from "../../shared/ui/BackButton/BackButton.js"
 
 export const PostList = ({ postsData, error, heading }) => {
