@@ -9,6 +9,7 @@ import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/AlbumPhotosPage 
 import { UsersPage } from "../../../pages/UsersPage/UsersPage"
 import { UserAlbumsPage } from "../../../pages/UserAlbumsPage/UserAlbumsPage"
 import { UserTodosPage } from "../../../pages/UserTodosPage/UserTodosPage"
+import { UserPostsPage } from "../../../pages/userPostsPage/userPostsPage"
 
 export const router = createBrowserRouter([
 	{
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
 			{ path: "users", element: <UsersPage /> },
 			{
 				path: "users/:id/posts",
-				element: <PostPage />,
+				element: <UserPostsPage />,
 			},
 			{
 				path: "users/:id/albums",

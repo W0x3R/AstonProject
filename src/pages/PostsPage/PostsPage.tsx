@@ -15,6 +15,7 @@ export const PostsPage = () => {
 			isLoading={isLoading}
 			postsData={postsFromSlice}
 			error={error}
+			heading="Все посты:"
 		/>
 	)
 }

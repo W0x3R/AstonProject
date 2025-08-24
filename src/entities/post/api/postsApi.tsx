@@ -21,7 +21,15 @@ export const postsApi = createApi({
 			query: (postId) => `posts/${postId}`,
 			providesTags: (result, error, id) => [{ type: "Posts", id }],
 		}),
+		getPostsByUserId: builder.query({
+			query: (userId) => `posts?userId=${userId}`,
+			providesTags: (result, error, id) => [{ type: "Posts", id }],
+		}),
 	}),
 })
 
-export const { useGetPostsQuery, useGetPostByIdQuery } = postsApi
+export const {
+	useGetPostsQuery,
+	useGetPostByIdQuery,
+	useGetPostsByUserIdQuery,
+} = postsApi

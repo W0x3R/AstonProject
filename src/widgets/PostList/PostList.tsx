@@ -7,8 +7,10 @@ import { PostLengthFilter } from "../../features/PostLengthFilter/ui/PostLengthF
 import { filterByLength } from "../../features/PostLengthFilter/lib/filterByLength.js"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../shared/ui/NavigateLink/NavigateLink.js"
+import { useGetPostsByUserIdQuery } from "../../entities/post/api/postsApi.js"
+import { BackButton } from "../../shared/ui/BackButton/BackButton.js"
 
-export const PostList = ({ postsData, error }) => {
+export const PostList = ({ postsData, error, heading }) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
 
 	const filteredData = useMemo(() => {
@@ -25,6 +27,7 @@ export const PostList = ({ postsData, error }) => {
 	return (
 		<section className={styles.section}>
 			<Container>
+				{heading !== "Все посты:" && <BackButton position="center" />}
 				{error && (
 					<DataNotFound>
 						Ошибка загрузки постов. Попробуйте повторить позже.
@@ -51,7 +54,7 @@ export const PostList = ({ postsData, error }) => {
 
 				{!error && filteredData.length > 0 && (
 					<>
-						<h2 className={styles.title}>Все посты:</h2>
+						<h2 className={styles.title}>{heading}</h2>
 						{filteredData.map((postData) => {
 							return (
 								<div className={styles.post__wrapper} key={postData.id}>
