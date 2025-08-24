@@ -8,7 +8,11 @@ const PostListWithLoading = withLoading(OriginalPostList)
 export const UserPostsPage = () => {
 	const { id } = useParams()
 	const userId = Number(id)
-	const { data: postsData, isLoading, error } = useGetPostsByUserIdQuery(userId)
+	const {
+		data: postsData = [],
+		isLoading,
+		error,
+	} = useGetPostsByUserIdQuery(userId)
 
 	return (
 		<PostListWithLoading
