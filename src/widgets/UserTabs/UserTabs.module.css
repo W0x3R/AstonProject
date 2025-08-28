@@ -1,0 +1,35 @@
+.list {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.list-item {
+	font-size: 18px;
+}
+
+.list-link {
+	display: inline-block;
+	position: relative;
+	color: var(--color-text-primary);
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 0%;
+		height: 2px;
+		background-color: var(--color-nav-item-before);
+		transition: width 0.3s ease-in-out;
+	}
+
+	&:hover::before {
+		width: 100%;
+	}
+}
+
+.list-link.active {
+	&::before {
+		width: 100%;
+		background-color: red;
+	}
+}

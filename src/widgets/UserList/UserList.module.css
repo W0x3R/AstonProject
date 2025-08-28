@@ -1,0 +1,28 @@
+.section {
+	padding-block: 20px;
+	min-height: 80vh;
+}
+
+.user-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	row-gap: 10px;
+	padding: 15px;
+	margin-bottom: 25px;
+	border: 2px solid var(--color-border-primary);
+	border-radius: 20px;
+}
+
+.title {
+	margin-bottom: 20px;
+	text-align: center;
+	color: var(--color-text-primary);
+}
+
+.no-users {
+	text-align: center;
+	font-size: 16px;
+	color: var(--color-text-primary);
+}

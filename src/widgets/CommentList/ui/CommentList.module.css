@@ -1,0 +1,53 @@
+.toggle-comment-btn {
+	position: relative;
+	margin-bottom: 10px;
+	padding-block: 12px;
+	padding-inline: 14px;
+	font-size: 16px;
+	color: var(--color-comment-toggle-button);
+	background-color: var(--color-button-bg-primary);
+	transition: color 0.3s ease-in-out;
+
+	&:hover {
+		color: var(--color-comment-toggle-button-hover);
+	}
+}
+
+.comment-wrapper {
+	padding: 0;
+	overflow: hidden;
+	transition:
+		max-height 0.4s ease-in-out,
+		padding 0.4s ease-in-out;
+	color: var(--color-text-primary);
+}
+
+.comment {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.no-comments {
+	padding-top: 15px;
+	text-align: center;
+	font-size: 16px;
+	color: var(--color-text-primary);
+}
+
+.comment-wrapper.open:first-of-type {
+	border-top: 2px solid darkgray;
+}
+
+.title {
+	margin-bottom: 2px;
+	font-size: 16px;
+}
+
+.email {
+	margin-bottom: 2px;
+	font-size: 14px;
+}
+
+.body {
+	font-size: 18px;
+}
