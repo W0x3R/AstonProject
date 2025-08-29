@@ -1,2 +1,4 @@
-export const filterByLength = (postsData, minLength) =>
+import type { TFilterByLength } from "./types"
+
+export const filterByLength: TFilterByLength = (postsData, minLength) =>
 	postsData.filter((post) => post?.title.length >= minLength)
