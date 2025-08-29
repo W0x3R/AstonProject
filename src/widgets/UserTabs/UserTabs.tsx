@@ -2,7 +2,7 @@ import { NavLink } from "react-router"
 import styles from "./UserTabs.module.css"
 
 export const UserTabs = () => {
-	const setIsActive = ({ isActive }) =>
+	const setIsActive = ({ isActive }: { isActive: boolean }): string =>
 		`${styles["list-link"]} ${isActive ? styles.active : ""}`
 
 	return (
