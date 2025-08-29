@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { PostList as OriginalPostList } from "../../widgets/PostList/PostList"
+import { PostList as OriginalPostList } from "../../widgets/PostList/ui/PostList"
 import { useGetPostsByUserIdQuery } from "../../entities/post/api/postsApi"
 
 const PostListWithLoading = withLoading(OriginalPostList)
