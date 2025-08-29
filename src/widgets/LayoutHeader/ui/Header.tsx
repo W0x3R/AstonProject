@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import styles from "./Header.module.css"
-import { Container } from "../../shared/ui/Container/Container"
-import { Button } from "../../shared/ui/Button/Button"
-import { Modal } from "../../shared/ui/Modal/Modal"
-import { controlBodyScroll } from "../../shared/lib/controlBodyScroll"
-import { ThemeSwitcher } from "../../features/ThemeSwitcher/ui/ThemeSwitcher"
-import { Logo } from "../../shared/ui/Logo/Logo.js"
-import { UserTabs } from "../UserTabs/UserTabs.js"
+import { Container } from "../../../shared/ui/Container/Container.js"
+import { Button } from "../../../shared/ui/Button/Button.js"
+import { Modal } from "../../../shared/ui/Modal/Modal.js"
+import { controlBodyScroll } from "../../../shared/lib/controlBodyScroll.js"
+import { ThemeSwitcher } from "../../../features/ThemeSwitcher/ui/ThemeSwitcher.js"
+import { Logo } from "../../../shared/ui/Logo/Logo.js"
+import { UserTabs } from "../../UserTabs/ui/UserTabs.js"
 
 export const Header = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)

@@ -1,9 +1,9 @@
 import { useLocation } from "react-router"
 import styles from "./AlbumList.module.css"
-import { AlbumCard } from "../../entities/albums/ui/AlbumCard"
-import { Container } from "../../shared/ui/Container/Container"
-import { BackButton } from "../../shared/ui/BackButton/BackButton"
-import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
+import { AlbumCard } from "../../../entities/albums/ui/AlbumCard"
+import { Container } from "../../../shared/ui/Container/Container"
+import { BackButton } from "../../../shared/ui/BackButton/BackButton"
+import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
 
 export const AlbumList = ({ albumsData, error, heading }) => {
 	const location = useLocation()

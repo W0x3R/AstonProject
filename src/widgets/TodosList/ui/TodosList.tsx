@@ -1,7 +1,7 @@
 import styles from "./TodosList.module.css"
-import { Container } from "../../shared/ui/Container/Container"
-import { BackButton } from "../../shared/ui/BackButton/BackButton"
-import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
+import { Container } from "../../../shared/ui/Container/Container"
+import { BackButton } from "../../../shared/ui/BackButton/BackButton"
+import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
 
 export const TodosList = ({ todosData, error, userId }) => {
 	return (

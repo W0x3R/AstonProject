@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/AlbumList"
+import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/ui/AlbumList"
 import { useGetAlbumsByUserIdQuery } from "../../entities/albums/api/albumsApi"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
 

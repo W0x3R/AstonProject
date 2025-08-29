@@ -1,9 +1,9 @@
 import { useParams } from "react-router"
 import styles from "./PhotosList.module.css"
-import { BackButton } from "../../shared/ui/BackButton/BackButton"
-import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
-import { PhotoCard } from "../../entities/photos/ui/PhotoCard"
-import { Container } from "../../shared/ui/Container/Container"
+import { BackButton } from "../../../shared/ui/BackButton/BackButton"
+import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
+import { PhotoCard } from "../../../entities/photos/ui/PhotoCard"
+import { Container } from "../../../shared/ui/Container/Container"
 
 export const PhotosList = ({ photosData, error }) => {
 	const { id } = useParams()

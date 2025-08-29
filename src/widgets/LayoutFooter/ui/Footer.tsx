@@ -1,6 +1,6 @@
 import styles from "./Footer.module.css"
-import { Container } from "../../shared/ui/Container/Container"
-import { Logo } from "../../shared/ui/Logo/Logo.js"
+import { Container } from "../../../shared/ui/Container/Container"
+import { Logo } from "../../../shared/ui/Logo/Logo"
 
 export const Footer = () => {
 	return (

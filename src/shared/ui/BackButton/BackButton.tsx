@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router"
 import styles from "./BackButton.module.css"
-import type { TBackButtonProps } from "./types"
+import type { TBackButtonProps } from "./model/types"
 
 export const BackButton = ({ position }: { position: TBackButtonProps }) => {
 	const navigate = useNavigate()
