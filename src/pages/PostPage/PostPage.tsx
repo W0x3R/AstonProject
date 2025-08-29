@@ -23,7 +23,7 @@ export const PostPage = () => {
 	const postWrapperRef = useRef(null)
 
 	if (isLoading) {
-		return <LoadingSpinner size="small" />
+		return <LoadingSpinner />
 	}
 	return (
 		<section className={styles.section} ref={sectionRef}>

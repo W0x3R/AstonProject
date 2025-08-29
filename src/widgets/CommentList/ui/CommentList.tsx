@@ -34,7 +34,7 @@ export const CommentList = ({ postId }) => {
 
 	return (
 		<div>
-			{isLoading && <LoadingSpinner size="small" />}
+			{isLoading && <LoadingSpinner />}
 			{expanded && !isLoading && !error && commentsByPostId.length === 0 ?
 				<p className={styles["no-comments"]}>Комментариев пока нет.</p>
 			:	<>

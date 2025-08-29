@@ -6,7 +6,7 @@ export const withLoading = <T extends object>(
 	return function WithLoadingComponent(props: T & { isLoading: boolean }) {
 		const { isLoading, ...rest } = props
 		if (isLoading) {
-			return <LoadingSpinner size="small" />
+			return <LoadingSpinner />
 		}
 		return <Component {...(rest as T)} />
 	}

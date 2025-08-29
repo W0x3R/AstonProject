@@ -14,12 +14,9 @@
 
 .spinner {
 	display: inline-block;
+	width: 60px;
+	height: 60px;
 	animation: rotateSpinner 0.8s infinite linear;
 	cursor: default;
 	fill: var(--fill-loading-spinner);
-}
-
-.spinner.small {
-	width: 60px;
-	height: 60px;
 }
