@@ -10,12 +10,15 @@ import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
 import { useGetPostByIdQuery } from "../../entities/post/api/postsApi"
 import { useSelector } from "react-redux"
 import { selectPostById } from "../../entities/post/model/slice/postSlice"
+import type { TRootState } from "../../app/providers/store/store"
 
 export const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
 	const { data: postData = {}, isLoading, error } = useGetPostByIdQuery(postId)
-	const postFromSlice = useSelector((state) => selectPostById(state, postId))
+	const postFromSlice = useSelector((state: TRootState) =>
+		selectPostById(state, postId)
+	)
 	const sectionRef = useRef(null)
 	const postWrapperRef = useRef(null)
 
