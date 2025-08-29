@@ -8,6 +8,8 @@ import { photosApi } from "../../../entities/photos/api/photosApi"
 import postReducer from "../../../entities/post/model/slice/postSlice"
 import userReducer from "../../../entities/users/model/slice/userSlice"
 
+export type TRootState = ReturnType<typeof store.getState>
+
 export const store = configureStore({
 	reducer: {
 		posts: postReducer,
