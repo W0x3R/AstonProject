@@ -1,8 +1,15 @@
 import { createPortal } from "react-dom"
 import styles from "./Modal.module.css"
+import type { TModal } from "./types"
+import type { ReactNode } from "react"
 
-export const Modal = ({ children, className, onClick, isModalOpen }) => {
-	const modalRoot = document.getElementById("modal-root")
+export const Modal = ({
+	children,
+	className,
+	onClick,
+	isModalOpen,
+}: TModal) => {
+	const modalRoot = document.getElementById("modal-root") as HTMLElement
 
 	return createPortal(
 		<div
@@ -20,12 +27,14 @@ export const Modal = ({ children, className, onClick, isModalOpen }) => {
 	)
 }
 
-Modal.Header = ({ children }) => (
+Modal.Header = ({ children }: { children: ReactNode }) => (
 	<h1 className={styles.modal__header}>{children}</h1>
 )
 
-Modal.Body = ({ children }) => <p className={styles.modal__body}>{children}</p>
+Modal.Body = ({ children }: { children: ReactNode }) => (
+	<p className={styles.modal__body}>{children}</p>
+)
 
-Modal.Footer = ({ children }) => (
+Modal.Footer = ({ children }: { children: ReactNode }) => (
 	<p className={styles.modal__footer}>{children}</p>
 )
