@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TPost } from "../model/types"
 
 export const postsApi = createApi({
 	reducerPath: "postsApi",
@@ -7,38 +8,40 @@ export const postsApi = createApi({
 	}),
 	tagTypes: ["Posts"],
 	endpoints: (builder) => ({
-		getPosts: builder.query({
+		getPosts: builder.query<TPost[], void>({
 			query: () => "posts",
 			providesTags: (result) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Posts", id })),
-						{ type: "Posts", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Posts" as const, id })),
+						{ type: "Posts" as const, id: "LIST" },
 					]
-				:	[{ type: "Posts", id: "LIST" }],
+				:	[{ type: "Posts" as const, id: "LIST" }],
 		}),
-		getPostById: builder.query({
+		getPostById: builder.query<TPost, number>({
 			query: (postId) => `posts/${postId}`,
-			providesTags: (result, error, id) => [{ type: "Posts", id }],
+			providesTags: (_result, _error, postId) => [
+				{ type: "Posts" as const, postId },
+			],
 		}),
-		getPostsByUserId: builder.query({
+		getPostsByUserId: builder.query<TPost[], number>({
 			query: (userId) => `posts?userId=${userId}`,
 			providesTags: (result) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Posts", id })),
-						{ type: "Posts", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Posts" as const, id })),
+						{ type: "Posts" as const, id: "LIST" },
 					]
-				:	[{ type: "Posts", id: "LIST" }],
+				:	[{ type: "Posts" as const, id: "LIST" }],
 		}),
-		deletePost: builder.mutation({
+		deletePost: builder.mutation<void, number>({
 			query: (postId) => ({
 				url: `posts/${postId}`,
 				method: "DELETE",
 			}),
-			invalidatesTags: (result, error, id) => [
-				{ type: "Posts", id },
-				{ type: "Posts", id: "LIST" },
+			invalidatesTags: (_result, _error, postId) => [
+				{ type: "Posts" as const, postId },
+				{ type: "Posts" as const, postId: "LIST" },
 			],
 		}),
 	}),
