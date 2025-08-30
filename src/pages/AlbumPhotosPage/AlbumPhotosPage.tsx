@@ -1,7 +1,7 @@
+import { useParams } from "react-router"
 import { withLoading } from "../../shared/lib/hoc/withLoading"
 import { PhotosList } from "../../widgets/PhotosList/ui/PhotosList"
 import { useGetPhotosByAlbumIdQuery } from "../../entities/photos/api/photosApi"
-import { useParams } from "react-router"
 
 const PhotosListWithLoading = withLoading(PhotosList)
 
