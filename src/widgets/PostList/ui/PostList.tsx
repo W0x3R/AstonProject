@@ -13,13 +13,14 @@ import { ItemList } from "../../../shared/ui/ItemList/ItemList.js"
 import type { TPost } from "../../../entities/post/model/types.js"
 
 export const PostList = ({ postsData, error, heading }: TPostListProps) => {
-	const [minTitleLength, setMinTitleLength] = useState("0")
+	const [minTitleLength, setMinTitleLength] = useState(0)
+
 	const filteredData = useMemo(() => {
 		return filterByLength(postsData, minTitleLength)
 	}, [postsData, minTitleLength])
 
 	const onFilterChange = useCallback(
-		(length: string) => setMinTitleLength(length),
+		(length: number) => setMinTitleLength(length),
 		[]
 	)
 
