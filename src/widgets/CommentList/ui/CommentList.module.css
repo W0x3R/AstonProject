@@ -22,11 +22,6 @@
 	color: var(--color-text-primary);
 }
 
-.comment {
-	padding-top: 12px;
-	padding-bottom: 12px;
-}
-
 .no-comments {
 	padding-top: 15px;
 	text-align: center;
@@ -36,18 +31,4 @@
 
 .comment-wrapper.open:first-of-type {
 	border-top: 2px solid darkgray;
-}
-
-.title {
-	margin-bottom: 2px;
-	font-size: 16px;
-}
-
-.email {
-	margin-bottom: 2px;
-	font-size: 14px;
-}
-
-.body {
-	font-size: 18px;
 }
