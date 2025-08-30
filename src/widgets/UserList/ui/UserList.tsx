@@ -1,3 +1,5 @@
+import type { TUser } from "../../../entities/users/model/types"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./UserList.module.css"
 import { Container } from "../../../shared/ui/Container/Container"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
@@ -19,25 +21,28 @@ export const UserList = ({ usersData, error }) => {
 				{!error && usersData.length > 0 && (
 					<>
 						<h2 className={styles.title}>Все пользователи:</h2>
-						{usersData.map((user) => {
-							return (
-								<div className={styles["user-wrapper"]} key={user.id}>
-									<UserCard userData={user} />
-									<NavigateLink
-										text="Посты пользователя"
-										url={`/users/${user.id}/posts`}
-									/>
-									<NavigateLink
-										text="Альбомы пользователя"
-										url={`/users/${user.id}/albums`}
-									/>
-									<NavigateLink
-										text="Список дел пользователя"
-										url={`/users/${user.id}/todos`}
-									/>
-								</div>
-							)
-						})}
+						<ItemList<TUser>
+							items={usersData}
+							renderItem={(userData) => {
+								return (
+									<div className={styles["user-wrapper"]} key={userData.id}>
+										<UserCard userData={userData} />
+										<NavigateLink
+											text="Посты пользователя"
+											url={`/users/${userData.id}/posts`}
+										/>
+										<NavigateLink
+											text="Альбомы пользователя"
+											url={`/users/${userData.id}/albums`}
+										/>
+										<NavigateLink
+											text="Список дел пользователя"
+											url={`/users/${userData.id}/todos`}
+										/>
+									</div>
+								)
+							}}
+						/>
 					</>
 				)}
 			</Container>

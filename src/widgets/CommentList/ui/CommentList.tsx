@@ -1,4 +1,6 @@
 import { useCallback, useState, useRef, useEffect } from "react"
+import type { TComment } from "../../../entities/comments/model/types"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./CommentList.module.css"
 import { Button } from "../../../shared/ui/Button/Button"
 import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/commentsApi"
@@ -49,13 +51,19 @@ export const CommentList = ({ postId }) => {
 						className={`${styles["comment-wrapper"]} ${expanded ? styles.open : ""}`}
 						style={{ maxHeight }}
 					>
-						{commentsByPostId.map(({ id, name, email, body }) => (
-							<div className={styles.comment} key={id}>
-								<h2 className={styles.title}>{name}</h2>
-								<h3 className={styles.email}>{email}</h3>
-								<p className={styles.body}>{body}</p>
-							</div>
-						))}
+						<ItemList<TComment>
+							items={commentsByPostId}
+							renderItem={({ id, name, email, body }) => {
+								return (
+									<CommentsCard
+										key={id}
+										name={name}
+										email={email}
+										body={body}
+									/>
+								)
+							}}
+						/>
 					</div>
 				</>
 			}

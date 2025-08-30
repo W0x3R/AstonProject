@@ -4,3 +4,5 @@ export type TPost = {
 	title: string
 	body: string
 }
+
+export type TPostCardProps = { postData: Omit<TPost, "userId" | "id"> }

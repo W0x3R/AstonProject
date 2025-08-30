@@ -1,3 +1,5 @@
+import type { TTodos } from "../../../entities/todos/model/types"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./TodosList.module.css"
 import { Container } from "../../../shared/ui/Container/Container"
 import { BackButton } from "../../../shared/ui/BackButton/BackButton"
@@ -28,16 +30,19 @@ export const TodosList = ({ todosData, error, userId }) => {
 							<h2
 								className={styles.title}
 							>{`Список дел пользователя №${userId}:`}</h2>
-							{todosData.map(({ id, title, completed }) => {
-								return (
-									<div key={id} className={styles["todo-wrapper"]}>
-										<h3 className={styles["todo-title"]}>{title}</h3>
-										<p className={styles["todo-completed"]}>
-											{completed ? "Выполнено" : "Не выполнено"}
-										</p>
-									</div>
-								)
-							})}
+							<ItemList<TTodos>
+								items={todosData}
+								renderItem={(todoData) => {
+									return (
+										<div key={todoData.id} className={styles["todo-wrapper"]}>
+											<h3 className={styles["todo-title"]}>{todoData.title}</h3>
+											<p className={styles["todo-completed"]}>
+												{todoData.completed ? "Выполнено" : "Не выполнено"}
+											</p>
+										</div>
+									)
+								}}
+							/>
 						</div>
 					</>
 				)}

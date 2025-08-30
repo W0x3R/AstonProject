@@ -1,4 +1,6 @@
 import { useParams } from "react-router"
+import type { TPhoto } from "../../../entities/photos/model/types"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./PhotosList.module.css"
 import { BackButton } from "../../../shared/ui/BackButton/BackButton"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
@@ -29,13 +31,16 @@ export const PhotosList = ({ photosData, error }) => {
 							<DataNotFound>Похоже, что изображения не найдены.</DataNotFound>
 						)}
 						<ul className={styles.list}>
-							{photosData.map(({ id, title, url }) => {
-								return (
-									<li className={styles["list-item"]} key={id}>
-										<PhotoCard src={url} title={title} />
-									</li>
-								)
-							})}
+							<ItemList<TPhoto>
+								items={photosData}
+								renderItem={(photoData) => {
+									return (
+										<li className={styles["list-item"]} key={photoData.id}>
+											<PhotoCard src={photoData.url} title={photoData.title} />
+										</li>
+									)
+								}}
+							/>
 						</ul>
 					</>
 				)}

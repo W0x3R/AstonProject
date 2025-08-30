@@ -1,4 +1,6 @@
 import { useLocation } from "react-router"
+import type { TAlbum } from "../../../entities/albums/model/types"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./AlbumList.module.css"
 import { AlbumCard } from "../../../entities/albums/ui/AlbumCard"
 import { Container } from "../../../shared/ui/Container/Container"
@@ -26,13 +28,16 @@ export const AlbumList = ({ albumsData, error, heading }) => {
 					<div className={styles.wrapper}>
 						<h2 className={styles.title}>{heading}</h2>
 						<ul className={styles.list}>
-							{albumsData.map(({ id, title }) => {
-								return (
-									<li key={id} className={styles["list-item"]}>
-										<AlbumCard title={title} id={id} />
-									</li>
-								)
-							})}
+							<ItemList<TAlbum>
+								items={albumsData}
+								renderItem={(albumData) => {
+									return (
+										<li key={albumData.id} className={styles["list-item"]}>
+											<AlbumCard title={albumData.title} id={albumData.id} />
+										</li>
+									)
+								}}
+							/>
 						</ul>
 					</div>
 				)}
