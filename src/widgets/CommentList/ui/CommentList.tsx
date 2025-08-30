@@ -7,6 +7,7 @@ import { Button } from "../../../shared/ui/Button/Button"
 import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/commentsApi"
 import { LoadingSpinner } from "../../../shared/ui/LoadingSpinner/LoadingSpinner"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
+import { CommentsCard } from "../../../entities/comments/ui/CommentsCard"
 
 export const CommentList = ({ postId }: TCommentListProps) => {
 	const [expanded, setExpanded] = useState(false)
