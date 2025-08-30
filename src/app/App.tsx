@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
+import { RouterProvider } from "react-router"
 import { ThemeContext } from "../shared/lib/ThemeProvider"
 import { GLOBAL_CLASSES } from "../shared/constants/globalClasses"
-import { RouterProvider } from "react-router"
 import { router } from "./providers/router/router"
 
 export const App = () => {

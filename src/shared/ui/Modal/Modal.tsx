@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom"
-import styles from "./Modal.module.css"
-import type { TModal } from "./model/types"
 import type { ReactNode } from "react"
+import type { TModal } from "./model/types"
+import styles from "./Modal.module.css"
 
 export const Modal = ({
 	children,

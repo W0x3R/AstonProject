@@ -1,5 +1,7 @@
 import { useRef } from "react"
 import { useParams } from "react-router"
+import { useSelector } from "react-redux"
+import type { TRootState } from "../../app/providers/store/store"
 import styles from "./PostPage.module.css"
 import { PostCard } from "../../entities/post/ui/PostCard"
 import { CommentList } from "../../widgets/CommentList/ui/CommentList"
@@ -8,9 +10,7 @@ import { BackButton } from "../../shared/ui/BackButton/BackButton"
 import { LoadingSpinner } from "../../shared/ui/LoadingSpinner/LoadingSpinner"
 import { DataNotFound } from "../../shared/ui/DataNotFound/DataNotFound"
 import { useGetPostByIdQuery } from "../../entities/post/api/postsApi"
-import { useSelector } from "react-redux"
 import { selectPostById } from "../../entities/post/model/slice/postSlice"
-import type { TRootState } from "../../app/providers/store/store"
 
 export const PostPage = () => {
 	const { id } = useParams()

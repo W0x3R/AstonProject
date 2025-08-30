@@ -1,6 +1,6 @@
 import { memo } from "react"
-import styles from "./Button.module.css"
 import type { TButtonProps } from "./model/types"
+import styles from "./Button.module.css"
 
 export const Button = memo(({ onClick, children, className }: TButtonProps) => {
 	return (

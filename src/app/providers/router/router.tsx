@@ -5,11 +5,11 @@ import { Footer } from "../../../widgets/LayoutFooter/ui/Footer"
 import { PostsPage } from "../../../pages/PostsPage/PostsPage"
 import { PostPage } from "../../../pages/PostPage/PostPage"
 import { AlbumsPage } from "../../../pages/AlbumsPage/AlbumsPage"
-import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/AlbumPhotosPage "
+import { AlbumPhotosPage } from "../../../pages/AlbumPhotosPage/AlbumPhotosPage"
 import { UsersPage } from "../../../pages/UsersPage/UsersPage"
 import { UserAlbumsPage } from "../../../pages/UserAlbumsPage/UserAlbumsPage"
 import { UserTodosPage } from "../../../pages/UserTodosPage/UserTodosPage"
-import { UserPostsPage } from "../../../pages/userPostsPage/userPostsPage"
+import { UserPostsPage } from "../../../pages/userPostsPage/UserPostsPage"
 
 export const router = createBrowserRouter([
 	{
