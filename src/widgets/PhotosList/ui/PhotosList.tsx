@@ -1,5 +1,6 @@
 import { useParams } from "react-router"
 import type { TPhoto } from "../../../entities/photos/model/types"
+import type { TPhotosListProps } from "../model/types"
 import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./PhotosList.module.css"
 import { BackButton } from "../../../shared/ui/BackButton/BackButton"
@@ -7,7 +8,7 @@ import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
 import { PhotoCard } from "../../../entities/photos/ui/PhotoCard"
 import { Container } from "../../../shared/ui/Container/Container"
 
-export const PhotosList = ({ photosData, error }) => {
+export const PhotosList = ({ photosData, error }: TPhotosListProps) => {
 	const { id } = useParams()
 	const albumId = Number(id)
 	return (

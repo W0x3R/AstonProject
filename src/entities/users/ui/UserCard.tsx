@@ -1,6 +1,7 @@
+import type { TUserCardProps } from "../../../widgets/UserList/model/types"
 import styles from "./UserCard.module.css"
 
-export const UserCard = ({ userData }) => {
+export const UserCard = ({ userData }: TUserCardProps) => {
 	const { name, username, email, phone, website, address, company } = userData
 
 	return (

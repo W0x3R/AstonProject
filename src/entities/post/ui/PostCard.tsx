@@ -1,6 +1,7 @@
+import type { TPostCardProps } from "../model/types"
 import styles from "./PostCard.module.css"
 
-export const PostCard = ({ postData }) => {
+export const PostCard = ({ postData }: TPostCardProps) => {
 	const { title, body } = postData
 	return (
 		<div className={styles.postcard}>

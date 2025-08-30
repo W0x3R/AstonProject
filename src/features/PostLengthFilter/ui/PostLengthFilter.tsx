@@ -1,8 +1,10 @@
 import { memo } from "react"
+import type { TPostLengthFilterProps } from "../model/types"
 import styles from "./PostLengthFilter.module.css"
 
-const PostLengthFilter = ({ onFilterChange }) => {
-	const handleFilterChange = (e) => onFilterChange(e.target.value)
+const PostLengthFilter = ({ onFilterChange }: TPostLengthFilterProps) => {
+	const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+		onFilterChange(Number(e.target.value))
 
 	return (
 		<form className={styles.form}>

@@ -1,4 +1,5 @@
 import { useCallback, useState, useRef, useEffect } from "react"
+import type { TCommentListProps } from "../model/types"
 import type { TComment } from "../../../entities/comments/model/types"
 import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./CommentList.module.css"
@@ -7,7 +8,7 @@ import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/comm
 import { LoadingSpinner } from "../../../shared/ui/LoadingSpinner/LoadingSpinner"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
 
-export const CommentList = ({ postId }) => {
+export const CommentList = ({ postId }: TCommentListProps) => {
 	const [expanded, setExpanded] = useState(false)
 	const contentRef = useRef(null)
 	const [maxHeight, setMaxHeight] = useState("0px")

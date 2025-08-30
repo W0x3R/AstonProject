@@ -1,3 +1,4 @@
+import type { TTodosListProps } from "../model/types"
 import type { TTodos } from "../../../entities/todos/model/types"
 import { ItemList } from "../../../shared/ui/ItemList/ItemList"
 import styles from "./TodosList.module.css"
@@ -5,7 +6,7 @@ import { Container } from "../../../shared/ui/Container/Container"
 import { BackButton } from "../../../shared/ui/BackButton/BackButton"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
 
-export const TodosList = ({ todosData, error, userId }) => {
+export const TodosList = ({ todosData, error, userId }: TTodosListProps) => {
 	return (
 		<section className={styles.section}>
 			<Container>

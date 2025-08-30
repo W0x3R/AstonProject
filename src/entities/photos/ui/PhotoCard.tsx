@@ -1,11 +1,20 @@
+import type { TPhotoCardProps } from "../model/types"
+import { GLOBAL_CLASSES } from "../../../shared/constants/globalClasses"
 import styles from "./PhotoCard.module.css"
 
-export const PhotoCard = ({ src, title }) => {
+export const PhotoCard = ({ src, title }: TPhotoCardProps) => {
+	const fallBackUrl = GLOBAL_CLASSES.fallbackImgUrl
+
 	return (
 		<figure className={styles.figure}>
 			<figcaption className={styles.title}>{title}</figcaption>
-			{/* src оставил пустым, так как серверис по получению фото не работает и падает куча ошибок при загрузке  */}
-			<img src={" "} alt={title} width={640} height={480} loading="lazy" />
+			<img
+				src={fallBackUrl || src}
+				alt={title}
+				width={640}
+				height={480}
+				loading="lazy"
+			/>
 		</figure>
 	)
 }
