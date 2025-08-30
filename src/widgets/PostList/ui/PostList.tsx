@@ -1,16 +1,16 @@
 import { useCallback, useMemo, useState } from "react"
+import type { TPost } from "../../../entities/post/model/types.js"
+import type { TPostListProps } from "../model/types.js"
+import { ItemList } from "../../../shared/ui/ItemList/ItemList.js"
 import styles from "./PostList.module.css"
+import PostLengthFilter from "../../../features/PostLengthFilter/ui/PostLengthFilter.js"
 import { PostCard } from "../../../entities/post/ui/PostCard.js"
 import { CommentList } from "../../CommentList/ui/CommentList.js"
 import { Container } from "../../../shared/ui/Container/Container.js"
-import PostLengthFilter from "../../../features/PostLengthFilter/ui/PostLengthFilter.js"
 import { filterByLength } from "../../../features/PostLengthFilter/lib/filterByLength.js"
 import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound.js"
 import { NavigateLink } from "../../../shared/ui/NavigateLink/NavigateLink.js"
 import { BackButton } from "../../../shared/ui/BackButton/BackButton.js"
-import type { TPostListProps } from "./types.js"
-import { ItemList } from "../../../shared/ui/ItemList/ItemList.js"
-import type { TPost } from "../../../entities/post/model/types.js"
 
 export const PostList = ({ postsData, error, heading }: TPostListProps) => {
 	const [minTitleLength, setMinTitleLength] = useState(0)
