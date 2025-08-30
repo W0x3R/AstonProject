@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TAlbum } from "../model/types"
 
 export const albumsApi = createApi({
 	reducerPath: "albumsApi",
@@ -7,19 +8,21 @@ export const albumsApi = createApi({
 	}),
 	tagTypes: ["Albums"],
 	endpoints: (builder) => ({
-		getAlbums: builder.query({
+		getAlbums: builder.query<TAlbum[], void>({
 			query: () => "albums",
 			providesTags: (result) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Albums", id })),
-						{ type: "Albums", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Albums" as const, id })),
+						{ type: "Albums" as const, id: "LIST" },
 					]
-				:	[{ type: "Albums", id: "LIST" }],
+				:	[{ type: "Albums" as const, id: "LIST" }],
 		}),
-		getAlbumsByUserId: builder.query({
+		getAlbumsByUserId: builder.query<TAlbum[], number>({
 			query: (userId) => `albums?userId=${userId}`,
-			providesTags: (result, error, id) => [{ type: "Albums", id }],
+			providesTags: (_result, _error, userId) => [
+				{ type: "Albums", id: `LIST_USER_${userId}` },
+			],
 		}),
 	}),
 })

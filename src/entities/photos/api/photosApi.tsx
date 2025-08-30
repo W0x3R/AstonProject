@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TPhoto } from "../model/types"
 
 export const photosApi = createApi({
 	reducerPath: "photosApi",
@@ -7,15 +8,15 @@ export const photosApi = createApi({
 	}),
 	tagTypes: ["Photos"],
 	endpoints: (builder) => ({
-		getPhotosByAlbumId: builder.query({
+		getPhotosByAlbumId: builder.query<TPhoto[], number>({
 			query: (albumId) => `photos?albumId=${albumId}`,
-			providesTags: (result) =>
+			providesTags: (result, _error, albumId) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Photos", id })),
-						{ type: "Photos", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Photos" as const, id })),
+						{ type: "Photos" as const, id: `LIST_ALBUM_${albumId}` },
 					]
-				:	[{ type: "Photos", id: "LIST" }],
+				:	[{ type: "Photos" as const, id: `LIST_ALBUM_${albumId}` }],
 		}),
 	}),
 })

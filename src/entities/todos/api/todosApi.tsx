@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TTodos } from "../model/types"
 
 export const todosApi = createApi({
 	reducerPath: "todosApi",
@@ -7,9 +8,11 @@ export const todosApi = createApi({
 	}),
 	tagTypes: ["Todos"],
 	endpoints: (builder) => ({
-		getTodosByUserId: builder.query({
+		getTodosByUserId: builder.query<TTodos[], number>({
 			query: (userId) => `todos?userId=${userId}`,
-			providesTags: (result, error, id) => [{ type: "Todos", id }],
+			providesTags: (_result, _error, userId) => [
+				{ type: "Todos" as const, id: `LIST_USER_${userId}` },
+			],
 		}),
 	}),
 })

@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TComment } from "../model/types"
 
 export const commentsApi = createApi({
 	reducerPath: "commentsApi",
@@ -7,15 +8,15 @@ export const commentsApi = createApi({
 	}),
 	tagTypes: ["Comments"],
 	endpoints: (builder) => ({
-		getCommentsByPostId: builder.query({
+		getCommentsByPostId: builder.query<TComment[], number>({
 			query: (postId) => `/comments?postId=${postId}`,
-			providesTags: (result) =>
+			providesTags: (result, _error, postId) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Comments", id })),
-						{ type: "Comments", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Comments" as const, id })),
+						{ type: "Comments" as const, id: `LIST_POST_${postId}` },
 					]
-				:	[{ type: "Comments", id: "LIST" }],
+				:	[{ type: "Comments" as const, id: `LIST_POST_${postId}` }],
 		}),
 	}),
 })

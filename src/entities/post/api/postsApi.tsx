@@ -21,18 +21,18 @@ export const postsApi = createApi({
 		getPostById: builder.query<TPost, number>({
 			query: (postId) => `posts/${postId}`,
 			providesTags: (_result, _error, postId) => [
-				{ type: "Posts" as const, postId },
+				{ type: "Posts" as const, id: postId },
 			],
 		}),
 		getPostsByUserId: builder.query<TPost[], number>({
 			query: (userId) => `posts?userId=${userId}`,
-			providesTags: (result) =>
+			providesTags: (result, _error, userId) =>
 				result ?
 					[
 						...result.map(({ id }) => ({ type: "Posts" as const, id })),
-						{ type: "Posts" as const, id: "LIST" },
+						{ type: "Posts" as const, id: `LIST_USER_${userId}` },
 					]
-				:	[{ type: "Posts" as const, id: "LIST" }],
+				:	[{ type: "Posts" as const, id: `LIST_USER_${userId}` }],
 		}),
 		deletePost: builder.mutation<void, number>({
 			query: (postId) => ({
@@ -40,7 +40,7 @@ export const postsApi = createApi({
 				method: "DELETE",
 			}),
 			invalidatesTags: (_result, _error, postId) => [
-				{ type: "Posts" as const, postId },
+				{ type: "Posts" as const, id: postId },
 				{ type: "Posts" as const, postId: "LIST" },
 			],
 		}),

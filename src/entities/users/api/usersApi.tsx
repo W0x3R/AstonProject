@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import type { TUser } from "../model/types"
 
 export const usersApi = createApi({
 	reducerPath: "usersApi",
@@ -7,19 +8,19 @@ export const usersApi = createApi({
 	}),
 	tagTypes: ["Users"],
 	endpoints: (builder) => ({
-		getUsers: builder.query({
+		getUsers: builder.query<TUser[], void>({
 			query: () => "users",
 			providesTags: (result) =>
 				result ?
 					[
-						...result.map(({ id }) => ({ type: "Users", id })),
-						{ type: "Users", id: "LIST" },
+						...result.map(({ id }) => ({ type: "Users" as const, id })),
+						{ type: "Users" as const, id: "LIST" },
 					]
-				:	[{ type: "Users", id: "LIST" }],
+				:	[{ type: "Users" as const, id: "LIST" }],
 		}),
-		getUserById: builder.query({
+		getUserById: builder.query<TUser, number>({
 			query: (id) => `users/${id}`,
-			providesTags: (result, error, id) => [{ type: "Users", id }],
+			providesTags: (_result, _error, id) => [{ type: "Users" as const, id }],
 		}),
 	}),
 })
