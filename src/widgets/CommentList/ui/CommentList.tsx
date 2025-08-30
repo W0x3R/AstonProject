@@ -11,10 +11,11 @@ import { CommentsCard } from "../../../entities/comments/ui/CommentsCard"
 
 export const CommentList = ({ postId }: TCommentListProps) => {
 	const [expanded, setExpanded] = useState(false)
-	const contentRef = useRef(null)
 	const [maxHeight, setMaxHeight] = useState("0px")
 
-	let {
+	const contentRef = useRef<HTMLDivElement>(null)
+
+	const {
 		data: commentsByPostId = [],
 		isLoading,
 		error,
