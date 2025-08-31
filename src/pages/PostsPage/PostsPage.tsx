@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux"
-import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { PostList as OriginalPostsList } from "../../widgets/PostList/ui/PostList"
-import { useGetPostsQuery } from "../../entities/post/api/postsApi"
-import { selectAllPosts } from "../../entities/post/model/slice/postSlice"
+import { withLoading } from "@shared/lib/hoc/withLoading"
+import { PostList as OriginalPostsList } from "@widgets/PostList/ui/PostList"
+import { useGetPostsQuery } from "@entities/post/api/postsApi"
+import { selectAllPosts } from "@entities/post/model/slice/postSlice"
 
 const PostListsWithLoading = withLoading(OriginalPostsList)
 

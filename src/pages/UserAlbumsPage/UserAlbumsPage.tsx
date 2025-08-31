@@ -1,7 +1,7 @@
 import { useParams } from "react-router"
-import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/ui/AlbumList"
-import { useGetAlbumsByUserIdQuery } from "../../entities/albums/api/albumsApi"
-import { withLoading } from "../../shared/lib/hoc/withLoading"
+import { AlbumList as OriginalAlbumList } from "@widgets/AlbumList/ui/AlbumList"
+import { useGetAlbumsByUserIdQuery } from "@entities/albums/api/albumsApi"
+import { withLoading } from "@shared/lib/hoc/withLoading"
 
 const UserAlbumsPageLoading = withLoading(OriginalAlbumList)
 

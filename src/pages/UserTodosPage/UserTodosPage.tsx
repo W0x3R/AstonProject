@@ -1,7 +1,7 @@
 import { useParams } from "react-router"
-import { useGetTodosByUserIdQuery } from "../../entities/todos/api/todosApi"
-import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { TodosList as OriginalTodoList } from "../../widgets/TodosList/ui/TodosList"
+import { useGetTodosByUserIdQuery } from "@entities/todos/api/todosApi"
+import { withLoading } from "@shared/lib/hoc/withLoading"
+import { TodosList as OriginalTodoList } from "@widgets/TodosList/ui/TodosList"
 
 const TodosWithLoading = withLoading(OriginalTodoList)
 

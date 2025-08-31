@@ -1,6 +1,6 @@
-import { withLoading } from "../../shared/lib/hoc/withLoading"
-import { AlbumList as OriginalAlbumList } from "../../widgets/AlbumList/ui/AlbumList"
-import { useGetAlbumsQuery } from "../../entities/albums/api/albumsApi"
+import { withLoading } from "@shared/lib/hoc/withLoading"
+import { AlbumList as OriginalAlbumList } from "@widgets/AlbumList/ui/AlbumList"
+import { useGetAlbumsQuery } from "@entities/albums/api/albumsApi"
 
 const AlbumListWithLoading = withLoading(OriginalAlbumList)
 

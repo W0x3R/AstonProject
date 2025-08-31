@@ -1,5 +1,5 @@
 import type { TPhotoCardProps } from "../model/types"
-import { GLOBAL_CLASSES } from "../../../shared/constants/globalClasses"
+import { GLOBAL_CLASSES } from "@shared/constants/globalClasses"
 import styles from "./PhotoCard.module.css"
 
 export const PhotoCard = ({ src, title }: TPhotoCardProps) => {

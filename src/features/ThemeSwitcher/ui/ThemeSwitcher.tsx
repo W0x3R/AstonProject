@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import styles from "./ThemeSwitcher.module.css"
-import DarkThemeIcon from "../../../shared/assets/images/dark-theme-icon.svg?react"
-import LightThemeIcon from "../../../shared/assets/images/light-theme-icon.svg?react"
-import { GLOBAL_CLASSES } from "../../../shared/constants/globalClasses"
-import { ThemeContext } from "../../../shared/lib/ThemeProvider"
+import DarkThemeIcon from "@shared/assets/images/dark-theme-icon.svg?react"
+import LightThemeIcon from "@shared/assets/images/light-theme-icon.svg?react"
+import { GLOBAL_CLASSES } from "@shared/constants/globalClasses"
+import { ThemeContext } from "@shared/lib/ThemeProvider"
 
 export const ThemeSwitcher = () => {
 	const { theme, toggleTheme } = useContext(ThemeContext)

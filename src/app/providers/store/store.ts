@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { postsApi } from "../../../entities/post/api/postsApi"
-import { commentsApi } from "../../../entities/comments/api/commentsApi"
-import { albumsApi } from "../../../entities/albums/api/albumsApi"
-import { todosApi } from "../../../entities/todos/api/todosApi"
-import { usersApi } from "../../../entities/users/api/usersApi"
-import { photosApi } from "../../../entities/photos/api/photosApi"
-import postReducer from "../../../entities/post/model/slice/postSlice"
-import userReducer from "../../../entities/users/model/slice/userSlice"
+import { postsApi } from "@entities/post/api/postsApi"
+import { commentsApi } from "@entities/comments/api/commentsApi"
+import { albumsApi } from "@entities/albums/api/albumsApi"
+import { todosApi } from "@entities/todos/api/todosApi"
+import { usersApi } from "@entities/users/api/usersApi"
+import { photosApi } from "@entities/photos/api/photosApi"
+import postReducer from "@entities/post/model/slice/postSlice"
+import userReducer from "@entities/users/model/slice/userSlice"
 
 export type TRootState = ReturnType<typeof store.getState>
 

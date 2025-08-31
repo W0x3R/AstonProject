@@ -1,13 +1,13 @@
 import { useCallback, useState, useRef, useEffect } from "react"
 import type { TCommentListProps } from "../model/types"
-import type { TComment } from "../../../entities/comments/model/types"
-import { ItemList } from "../../../shared/ui/ItemList/ItemList"
+import type { TComment } from "@entities/comments/model/types"
+import { ItemList } from "@shared/ui/ItemList/ItemList"
 import styles from "./CommentList.module.css"
-import { Button } from "../../../shared/ui/Button/Button"
-import { useGetCommentsByPostIdQuery } from "../../../entities/comments/api/commentsApi"
-import { LoadingSpinner } from "../../../shared/ui/LoadingSpinner/LoadingSpinner"
-import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
-import { CommentsCard } from "../../../entities/comments/ui/CommentsCard"
+import { Button } from "@shared/ui/Button/Button"
+import { useGetCommentsByPostIdQuery } from "@entities/comments/api/commentsApi"
+import { LoadingSpinner } from "@shared/ui/LoadingSpinner/LoadingSpinner"
+import { DataNotFound } from "@shared/ui/DataNotFound/DataNotFound"
+import { CommentsCard } from "@entities/comments/ui/CommentsCard"
 
 export const CommentList = ({ postId }: TCommentListProps) => {
 	const [expanded, setExpanded] = useState(false)

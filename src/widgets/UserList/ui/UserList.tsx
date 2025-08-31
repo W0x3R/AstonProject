@@ -1,11 +1,11 @@
 import type { TUserListProps } from "../model/types"
-import type { TUser } from "../../../entities/users/model/types"
-import { ItemList } from "../../../shared/ui/ItemList/ItemList"
+import type { TUser } from "@entities/users/model/types"
+import { ItemList } from "@shared/ui/ItemList/ItemList"
 import styles from "./UserList.module.css"
-import { Container } from "../../../shared/ui/Container/Container"
-import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
-import { NavigateLink } from "../../../shared/ui/NavigateLink/NavigateLink"
-import { UserCard } from "../../../entities/users/ui/UserCard"
+import { Container } from "@shared/ui/Container/Container"
+import { DataNotFound } from "@shared/ui/DataNotFound/DataNotFound"
+import { NavigateLink } from "@shared/ui/NavigateLink/NavigateLink"
+import { UserCard } from "@entities/users/ui/UserCard"
 
 export const UserList = ({ usersData, error }: TUserListProps) => {
 	return (

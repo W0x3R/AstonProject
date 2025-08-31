@@ -1,12 +1,12 @@
 import { useLocation } from "react-router"
 import type { TAlbumListProps } from "../model/types"
-import type { TAlbum } from "../../../entities/albums/model/types"
-import { ItemList } from "../../../shared/ui/ItemList/ItemList"
+import type { TAlbum } from "@entities/albums/model/types"
+import { ItemList } from "@shared/ui/ItemList/ItemList"
 import styles from "./AlbumList.module.css"
-import { AlbumCard } from "../../../entities/albums/ui/AlbumCard"
-import { Container } from "../../../shared/ui/Container/Container"
-import { BackButton } from "../../../shared/ui/BackButton/BackButton"
-import { DataNotFound } from "../../../shared/ui/DataNotFound/DataNotFound"
+import { AlbumCard } from "@entities/albums/ui/AlbumCard"
+import { Container } from "@shared/ui/Container/Container"
+import { BackButton } from "@shared/ui/BackButton/BackButton"
+import { DataNotFound } from "@shared/ui/DataNotFound/DataNotFound"
 
 export const AlbumList = ({ albumsData, error, heading }: TAlbumListProps) => {
 	const location = useLocation()
