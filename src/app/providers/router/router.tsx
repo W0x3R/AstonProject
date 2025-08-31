@@ -18,6 +18,8 @@ const UserTodosPageLazy = lazy(
 	() => import("@pages/UserTodosPage/UserTodosPage")
 )
 
+const NotFoundPageLazy = lazy(() => import("@pages/NotFoundPage/NotFoundPage"))
+
 export const router = createBrowserRouter([
 	{
 		path: "/",
@@ -44,6 +46,10 @@ export const router = createBrowserRouter([
 			{
 				path: "users/:id/todos",
 				element: <UserTodosPageLazy />,
+			},
+			{
+				path: "*",
+				element: <NotFoundPageLazy />,
 			},
 		],
 	},
