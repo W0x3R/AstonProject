@@ -23,6 +23,7 @@ body {
 	--color-filter-input-border: #0000002e;
 	--color-nav-item-before: black;
 	--color-photo-card-bg: whitesmoke;
+	--color-suspense-bg: #d7d6d6d4;
 	padding: 0;
 	font-family: "VelaSans", Arial, sans-serif;
 	font-size: 16px;
@@ -54,6 +55,7 @@ body.dark {
 	--color-filter-input-border: #e1e3e6;
 	--color-nav-item-before: white;
 	--color-photo-card-bg: #00000026;
+	--color-suspense-bg: #0e0e0ed4;
 }
 
 #root {
