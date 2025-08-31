@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import styles from "./Footer.module.css"
 import { Container } from "@shared/ui/Container/Container"
 import { Logo } from "@shared/ui/Logo/Logo"
@@ -8,9 +9,9 @@ export const Footer = () => {
 			<Container>
 				<div className={styles.wrapper}>
 					<p>© 2025 Учебный проект для Aston.</p>
-					<a href="/">
+					<Link to="/">
 						<Logo />
-					</a>
+					</Link>
 					<a href="#" target="_blank">
 						GitHub проекта
 					</a>

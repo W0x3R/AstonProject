@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router"
 import styles from "./Header.module.css"
 import { Container } from "@shared/ui/Container/Container.js"
 import { Button } from "@shared/ui/Button/Button.js"
@@ -27,9 +28,9 @@ export const Header = () => {
 		<header className={styles.header}>
 			<Container>
 				<div className={styles.wrapper}>
-					<a href="/">
+					<Link to="/">
 						<Logo />
-					</a>
+					</Link>
 					<Button
 						onClick={handleModalOpen}
 						className={styles["open-modal-btn"]}
