@@ -3,7 +3,7 @@ import styles from "./Footer.module.css"
 import { Container } from "@shared/ui/Container/Container"
 import { Logo } from "@shared/ui/Logo/Logo"
 
-export const Footer = () => {
+const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<Container>
@@ -20,3 +20,5 @@ export const Footer = () => {
 		</footer>
 	)
 }
+
+export default Footer

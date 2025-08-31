@@ -4,7 +4,7 @@ import { useGetAlbumsQuery } from "@entities/albums/api/albumsApi"
 
 const AlbumListWithLoading = withLoading(OriginalAlbumList)
 
-export const AlbumsPage = () => {
+const AlbumsPage = () => {
 	const { data: albumsData = [], isLoading, error } = useGetAlbumsQuery()
 
 	return (
@@ -16,3 +16,5 @@ export const AlbumsPage = () => {
 		/>
 	)
 }
+
+export default AlbumsPage

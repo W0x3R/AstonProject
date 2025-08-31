@@ -5,7 +5,7 @@ import { withLoading } from "@shared/lib/hoc/withLoading"
 
 const UserAlbumsPageLoading = withLoading(OriginalAlbumList)
 
-export const UserAlbumsPage = () => {
+const UserAlbumsPage = () => {
 	const { id } = useParams()
 	const userId = Number(id)
 
@@ -24,3 +24,5 @@ export const UserAlbumsPage = () => {
 		/>
 	)
 }
+
+export default UserAlbumsPage

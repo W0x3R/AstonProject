@@ -12,7 +12,7 @@ import { DataNotFound } from "@shared/ui/DataNotFound/DataNotFound"
 import { useGetPostByIdQuery } from "@entities/post/api/postsApi"
 import { selectPostById } from "@entities/post/model/slice/postSlice"
 
-export const PostPage = () => {
+const PostPage = () => {
 	const { id } = useParams()
 	const postId = Number(id)
 	const { data: postData = {}, isLoading, error } = useGetPostByIdQuery(postId)
@@ -50,3 +50,5 @@ export const PostPage = () => {
 		</section>
 	)
 }
+
+export default PostPage

@@ -6,7 +6,7 @@ import { selectAllUsers } from "@entities/users/model/slice/userSlice"
 
 const UserListsWithLoading = withLoading(OriginalUserList)
 
-export const UsersPage = () => {
+const UsersPage = () => {
 	const { isLoading, error } = useGetUsersQuery()
 	const usersFromSlice = useSelector(selectAllUsers)
 	return (
@@ -17,3 +17,5 @@ export const UsersPage = () => {
 		/>
 	)
 }
+
+export default UsersPage

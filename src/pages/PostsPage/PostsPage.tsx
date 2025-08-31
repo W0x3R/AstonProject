@@ -6,7 +6,7 @@ import { selectAllPosts } from "@entities/post/model/slice/postSlice"
 
 const PostListsWithLoading = withLoading(OriginalPostsList)
 
-export const PostsPage = () => {
+const PostsPage = () => {
 	const { isLoading, error } = useGetPostsQuery()
 	const postsFromSlice = useSelector(selectAllPosts)
 
@@ -19,3 +19,5 @@ export const PostsPage = () => {
 		/>
 	)
 }
+
+export default PostsPage

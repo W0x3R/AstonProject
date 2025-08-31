@@ -5,7 +5,7 @@ import { useGetPostsByUserIdQuery } from "@entities/post/api/postsApi"
 
 const PostListWithLoading = withLoading(OriginalPostList)
 
-export const UserPostsPage = () => {
+const UserPostsPage = () => {
 	const { id } = useParams()
 	const userId = Number(id)
 	const {
@@ -23,3 +23,5 @@ export const UserPostsPage = () => {
 		/>
 	)
 }
+
+export default UserPostsPage

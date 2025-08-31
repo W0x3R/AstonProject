@@ -9,7 +9,7 @@ import { ThemeSwitcher } from "@features/ThemeSwitcher/ui/ThemeSwitcher.js"
 import { Logo } from "@shared/ui/Logo/Logo.js"
 import { UserTabs } from "../../UserTabs/ui/UserTabs.js"
 
-export const Header = () => {
+const Header = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
 
 	const handleModalOpen = () => setIsModalOpen(true)
@@ -57,3 +57,5 @@ export const Header = () => {
 		</header>
 	)
 }
+
+export default Header

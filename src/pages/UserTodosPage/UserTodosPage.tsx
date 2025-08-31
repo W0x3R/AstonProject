@@ -5,7 +5,7 @@ import { TodosList as OriginalTodoList } from "@widgets/TodosList/ui/TodosList"
 
 const TodosWithLoading = withLoading(OriginalTodoList)
 
-export const UserTodosPage = () => {
+const UserTodosPage = () => {
 	const { id } = useParams()
 	const userId = Number(id)
 
@@ -24,3 +24,5 @@ export const UserTodosPage = () => {
 		/>
 	)
 }
+
+export default UserTodosPage

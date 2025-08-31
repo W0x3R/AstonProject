@@ -5,7 +5,7 @@ import { useGetPhotosByAlbumIdQuery } from "@entities/photos/api/photosApi"
 
 const PhotosListWithLoading = withLoading(PhotosList)
 
-export const AlbumPhotosPage = () => {
+const AlbumPhotosPage = () => {
 	const { id } = useParams()
 	const albumId = Number(id)
 	const {
@@ -22,3 +22,5 @@ export const AlbumPhotosPage = () => {
 		/>
 	)
 }
+
+export default AlbumPhotosPage
