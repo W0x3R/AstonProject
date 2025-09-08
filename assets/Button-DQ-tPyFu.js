@@ -1,1 +1,0 @@
-import{a as n,j as r}from"./index-CX5q7Xty.js";const u="_button_1tirk_1",a={button:u},m=n.memo(({onClick:t,children:o,className:s})=>r.jsx("button",{className:`${a.button} ${s}`,onClick:t,children:o}));export{m as B};
