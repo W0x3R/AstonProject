@@ -1,0 +1,1 @@
+import{j as i,L as t}from"./index-CX5q7Xty.js";const a="_link_19i1t_1",n={"link-wrapper":"_link-wrapper_19i1t_1",link:a},l=({text:s,url:r})=>i.jsx("div",{className:n["link-wrapper"],children:i.jsx(t,{className:n.link,to:r,children:s})});export{l as N};
