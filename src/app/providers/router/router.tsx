@@ -1,5 +1,5 @@
 import { lazy } from "react"
-import { createBrowserRouter, Navigate } from "react-router"
+import { createHashRouter, Navigate } from "react-router"
 
 const MainLayoutLazy = lazy(() => import("@shared/layouts/MainLayout"))
 const HeaderLazy = lazy(() => import("@widgets/LayoutHeader/ui/Header"))
@@ -20,7 +20,7 @@ const UserTodosPageLazy = lazy(
 
 const NotFoundPageLazy = lazy(() => import("@pages/NotFoundPage/NotFoundPage"))
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
 	{
 		path: "/",
 		element: <MainLayoutLazy header={<HeaderLazy />} footer={<FooterLazy />} />,
