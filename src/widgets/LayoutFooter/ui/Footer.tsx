@@ -12,7 +12,10 @@ const Footer = () => {
 					<Link to="/">
 						<Logo />
 					</Link>
-					<a href="#" target="_blank">
+					<a
+						href="https://github.com/W0x3R/React-Intensive-Project"
+						target="_blank"
+					>
 						GitHub проекта
 					</a>
 				</div>
